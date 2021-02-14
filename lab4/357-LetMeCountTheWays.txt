@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long int ll;
+
+ll dp[5][30001];
+ll coins [] = {1, 5, 10, 25, 50};
+
+void initMat() {
+    for(int i=0; i<=30000; i++) {
+        dp[0][i] = 1; 
+    }
+
+    for(int i=1; i<5; i++) {
+        for(int j=0; j<=30000; j++) {
+            dp[i][j] = dp[i-1][j];
+            if(j-coins[i] >= 0) {
+                dp[i][j] += dp[i][j - coins[i]];
+            }
+        }
+    }
+
+    return; 
+}
+
+int main() {
+    initMat();
+    
+    int n; 
+    while(cin >> n) {
+        ll ans = dp[4][n]; 
+
+        if(ans == 1) {
+            cout << "There is only 1 way ";
+        }
+        else {
+            cout << "There are " << ans << " ways ";
+        }
+
+
+        cout << "to produce " << n << " cents change." << endl;
+    }
+
+    return 0; 
+}
