@@ -3,41 +3,44 @@
     <head>
         <meta charset = "utf-8" />
         <title> Datos Interesantes de HTML5 </title>
+        <link rel="stylesheet" href="CSS/faq_template.css">
     </head>
 
     <body>
         <header>
             <h1> Datos Interesantes de HTML5 </h1>
+            <img src="Media/HTML5.jpg" alt="HTML5 logo">
         </header>
         
         <main>
-            <br><br><br>
-            
+            <br><br>
             <form>
                 <h3>
                     <label>Da click en el siguiente botón para ir a mi Sitio Web Personal: </label>
                     <input type="button" onclick="location.href='lab1_personal.html'" value="Sitio Personal" />
                 </h3>
             </form>
-
+            <br>
             <section>
                 <header>
                     <h2> Preguntas y Respuestas </h2>
                 </header>
 
 
-                <strong>1. ¿Cuál es la diferencia entre Internet y la World Wide Web?</strong>
+                <p><strong>1. ¿Cuál es la diferencia entre Internet y la World Wide Web?</strong></p>
                 <p>
-                Internet es la interconexión mundial de computadoras que hay hoy en día, 
-                mientras que la World Wide Web es el conjunto o colección de páginas que 
-                existen en esa red llamada Internet. 
+                    Internet es la interconexión mundial de computadoras que hay hoy en día, 
+                    mientras que la World Wide Web es el conjunto o colección de páginas que 
+                    existen en esa red llamada Internet. 
                 </p>
                 
                 <hr>
                 
-                <strong>2. ¿Cuáles son las partes de una URL? </strong>
-                <p>Tomando como ejemplo la siguiente URL: https://www.youtube.com/watch?v=29Sg1zpe3oI</p>
-                <table>
+                <p><strong>2. ¿Cuáles son las partes de una URL? </strong></p>
+                <p>Tomando como ejemplo la siguiente URL: 
+                    <a href: "https://www.youtube.com/watch?v=29Sg1zpe3oI> https://www.youtube.com/watch?v=29Sg1zpe3oI</a>
+                </p>
+                <table class="tabla">
                     <thead>
                         <tr>
                             <th>Parte</th>
@@ -75,8 +78,8 @@
 
                 <hr>
 
-                <strong>3. ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong>
-                <ul>
+                <p><strong>3. ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong></p>
+                <ul = class="circle_list">
                     <li><strong>GET: </strong> Obtener información de un recurso específico y no modificarlos. </li>                        <li><strong>GET: </strong> Obtener información de un recurso específico y no modificarlos. </li>
                     <li><strong>HEAD: </strong> Obtener headers y no body de un recurso. Es muy parecido a GET.  </li>
                     <li><strong>POST: </strong> Enviar datos al servidor. </li>
@@ -87,7 +90,7 @@
                 
                 <hr>
 
-                <strong>4. ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong>
+                <p><strong>4. ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong></p>
                 <p>
                     POST. Pues envías tus datos al servidor y este te responderá con un recurso: 
                     la página principal de un actor registrado en la base de datos de la página web, o un mensaje de error. 
@@ -96,7 +99,7 @@
 
                 <hr>
 
-                <strong>5. ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong>
+                <p><strong>5. ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong></p>
                 <p>
                     GET. Este método se utiliza para pedir la información y datos del sitio web. Una vez que el servidor acepta la petición, 
                     entonces el usuario puede ver en su pantalla el sitio web.  
@@ -104,14 +107,14 @@
 
                 <hr> 
 
-                <strong>6. Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong>
+                <p><strong>6. Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong></p>
                 <p>
                     Significa que la respuesta a una petición fue positiva (OK). 
                 </p>
 
                 <hr>
 
-                <strong>7. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong>
+                <p><strong>7. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong></p>
                 <p>
                     No. El código 404 indica que el sitio que se está buscando no existe. Aún si existiera el sitio web, es una técnica que utilizan los desarrolladores para 
                     ocultar algunos sitios a clientes sin autorización. 
@@ -119,14 +122,14 @@
 
                 <hr> 
 
-                <strong>8. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong>
+                <p><strong>8. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong></p>
                 <p>
                     Sí. El código 500 indica que hay un error interno en el servidor, por lo que es responsabilidad del desarrollador arreglar el problema. 
                 </p>
 
                 <hr>
 
-                <strong>9. ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong>
+                <p><strong>9. ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong></p>
                 <p>
                     Significa que es mejor utilizar CSS para realizar las funciones de ese atributo para 
                     mantener la codificación por capas y no implementar estilos en HTML. Ejemplos:
@@ -135,8 +138,8 @@
 
                 <hr>
 
-                <strong>10. ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong>
-                <ul> 
+                <p><strong>10. ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong></p>
+                <ul class="circle_list"> 
                     <li>HTML5 soporta video y audio, HTML4 no.</li>
                     <li>En HTML5 se simplificó el DOCTYPE a !DOCTYPE html.</li>
                     <li>En HTML5 se introdujeron nuevos elementos como:  header, footer, section, article.</li> 
@@ -147,9 +150,9 @@
 
                 <hr> 
 
-                <strong>11. ¿Qué componentes de estructura y estilo tiene una tabla?</strong>
+                <p><strong>11. ¿Qué componentes de estructura y estilo tiene una tabla?</strong></p>
                 <p>Componentes de estructura:</p>
-                <table>
+                <table class="tabla">
                     <thead>
                         <tr>
                             <th>Este es un nombre de columna y se define en el head de la tabla con el tag th</th>
@@ -168,7 +171,7 @@
                 </table>
                 <br>
                 <p>Componentes de estilo en CSS:</p>
-                <ul>
+                <ul class="circle_list">
                     <li>Width: Se refiere a la anchura de la tabla y/o celdas</li>
                     <li>Text-align: Alineación del texto</li>
                     <li>Border: Dibuja los bordes entre celdas y define su estilo</li>
@@ -178,7 +181,7 @@
 
                 <hr>
 
-                <strong>12. ¿Cuáles son los principales controles de una forma HTML5?</strong> 
+                <p><strong>12. ¿Cuáles son los principales controles de una forma HTML5?</strong> </p>
                 <p> Las formas se utilizan para la interacción con el usuario en la página web. Se implementan con el tag form y alugnos de los principales son: </p>
                 <form>
                     <p><label>Fecha: </label><input type="date" name="cumple"></p>
@@ -190,7 +193,7 @@
 
                 <hr>
 
-                <strong>13. ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ </strong>
+                <p><strong>13. ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ </strong></p>                
                 <p>Navegador: Chrome Dev 88.0.4324.150 </p>
                 <p>Sistema Operativo: Windows 10</p>
                 <p>Score: 476/500 puntos </p>
@@ -199,8 +202,8 @@
 
                 <hr>
 
-                <strong>14. ¿Cuál es el ciclo de vida de los sistemas de información?</strong>
-                <ol>
+                <p><strong>14. ¿Cuál es el ciclo de vida de los sistemas de información?</strong></p>
+                <ol class="o_list">
                     <li>Investigacion Preeliminar</li>
                     <li>Determinación de Requerimientos</li>
                     <li>Diseño</li>
@@ -211,8 +214,8 @@
 
                 <hr>
 
-                <strong>15. ¿Cuál es el ciclo de desarrollo de sistemas de información?</strong>
-                <ol>
+                <p><strong>15. ¿Cuál es el ciclo de desarrollo de sistemas de información?</strong></p>
+                <ol class="o_list">
                     <li>Planificación del concepto</li>
                     <li>Definición de Requisitos</li>
                     <li>Diseño</li>
@@ -235,14 +238,17 @@
                 <p>Goran Aviani. (2019, September 11). An introduction to HTTP: everything you need to know. FreeCodeCamp.org; freeCodeCamp.org. https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/</p>
                 <p>HTML5 - Deprecated Tags & Attributes - Tutorialspoint. (2021). Tutorialspoint.com. https://www.tutorialspoint.com/html5/html5_deprecated_tags.htm</p>
                 <p>HTTP response status codes - HTTP | MDN. (2020, December 18). Mozilla.org. https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</p>
-                <p>https://www.facebook.com/bbcnews. (2019, March 12). Leonard Kleinrock, el profesor de EE.UU. que envió el primer mensaje por internet. BBC News Mundo; BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,para%20acceder%20a%20la%20web.</p>
+                <p>https://www.facebook.com/bbcnews. (2019, March 12). Leonard Kleinrock, el profesor de EE.UU. que envió el primer mensaje por internet. BBC News Mundo; BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812#:~:
+                    text=Internet%20es%20una%20inmensa%20red,para%20acceder%20a%20la%20web.</p>
                 <p>Israel. (2018, June 14). El ciclo SDLC en 7 fases - Viewnext. Viewnext. https://www.viewnext.com/el-ciclo-sdlc-en-7-fases/</p>
                 <p>Universitat Oberta de Catalunya. (2017). CSS - Estilos de las tablas. Uoc.edu. https://mosaic.uoc.edu/ac/le/es/m6/ud7/index.html</p>
                 <p>¿Cuáles son las diferencias entre HTML4 (XHTML 1.0) y HTML5? – Programación en Internet. (2011, January 17). Blogs.ua.es. https://blogs.ua.es/pi/2011/01/17/%C2%BFcuales-son-las-diferencias-entre-html4-xhtml-1-0-y-html5/ </p>
                 <br><br>
             </section>
             <section>
-                <h2>Datos de Contacto</h2>
+                <header>
+                    <h2>Datos de Contacto</h2>
+                </header>
                 <div>Nombre: Rafael Hinojosa López</div>
                 <div>Matrícula: A01705777</div>
                 <div>Correo: a01705777@itesm.mx</div>
@@ -252,7 +258,7 @@
         </main>
 
         <footer>
-            Laboratorio 1 de tc2005b
+            <div>Laboratorio 1 de tc2005b</div>
             <div>Editor HTML utilizado: Visual Studio Code</div>
             <div>Página web del editor: <a href="https://code.visualstudio.com/"> https://code.visualstudio.com </a></div>
         </footer>

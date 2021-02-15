@@ -1,0 +1,94 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body { 
+    margin: 0 auto; 
+    max-width: 50em; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    padding: 3em 1em;
+    color: #555; 
+}
+
+h1 {
+    color: #333;
+    text-align: center; 
+}
+
+header h2 {
+    background-color: #f16528;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    line-height: 1.2;
+    padding: 0.5em; 
+    color: whitesmoke;
+    font-size: 1.5em; 
+    font-weight: 200;
+    position: relative;
+    text-align: center; 
+}
+
+h3 {
+    color: #555;
+    text-align: center; 
+}
+
+
+
+header img {
+    height: 80%;
+    width: 80%;
+    display: block;
+    margin: 0 auto; 
+}
+
+section {
+    background-color: #f5f7f9;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    line-height: 1.2;
+    padding: 10vw, 2em; 
+    text-align: justify;
+}
+
+p {
+    padding-top: 0.5em;  
+    padding-bottom: 0.5em;
+    padding-left: 2em; 
+    padding-right: 2em;
+}
+
+section img{
+    height: 80%;
+    width: 80%;
+    display: block;
+    margin: 0 auto; 
+    padding: 1em; 
+}
+
+.tabla {
+    padding: 1em; 
+    margin: 0 auto; 
+}
+
+tr, th, td {
+    padding: 1em; 
+    border: 1px solid rgb(110, 70, 78);
+    text-align: center;
+}
+
+.circle_list {
+    list-style-type: circle;    
+}
+
+.o_list {
+    padding-left: 5em;
+    padding-bottom: 1em; 
+}
+
+a {
+    color: blue; 
+}
+
+
