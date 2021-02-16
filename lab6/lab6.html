@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Rafa Hinojosa </title>
+        <link rel="stylesheet" href="CSS/bulma.css">
+    </head>
+    
+    <body> 
+        <header class="section">
+            <h1 class="title">Bienvenidos a mi sitio web</h1>
+        </header>
+
+        <main> 
+            <section class="section">
+                <form>   
+                    <h4 class="subtitle">
+                        <label class="subtitle">Da click en los siguientes botones para checar mis <strong>tareas</strong> </label>
+                        <br><br>
+                        <input class="button is-danger" onclick="location.href='lab1_faq_html.html'" value="HTML" />
+                        <input class="button is-info" onclick="location.href='lab3_faq_css.html'" value="CSS" />
+                    </h4>
+                </form>
+                <br>   
+            </section>  
+            
+            <section class="section">
+                <header>
+                    <h2 class="title">Un poco sobre mi</h2>
+                </header>
+                <br>
+                <article class="content">
+                    <p>¡Hola! Soy Rafael Hinojosa López, tengo 19 años y estudio el 4to semestre de Ingeniería en Tecnologías Computacionales.</p>
+                    <p> En este sitio te compartiré algunas de mis pasiones y hobbies. Mis datos de contacto los encontrarás 
+                        en la última sección de la página. 
+                    </p>
+                    <br>
+                    <figure>
+                        <img src="Media/PerfilSolo.jpeg" alt="Tocando el piano">
+                    </figure>
+                </article>
+            </section>
+            <section class="section">
+                <header>
+                    <h2 class="title ">Aficiones</h2>
+                </header>
+                <br>
+                <article class="content">
+                    <header>
+                        <h3 class="subtitle">Deportes</h3>
+                    </header>
+                    <p>
+                        Soy fanático de ver deportes.
+                        Me gusta mucho saber cómo se juegan, quiénes son los mejores equipos y estar al tanto de los partidos
+                        y eventos deportivos. 
+                    </p>
+                    <p>La siguiente tabla contiene mis deportes, equipos y jugadores favoritos.</p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Deporte</th>
+                                <th>Equipo favorito</th>
+                                <th>Jugador favorito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="table_content">
+                                <td>Béisbol</td>
+                                <td>New York Yankees</td>
+                                <td>Alex Rodríguez</td>
+                            </tr>
+                            <tr>
+                                <td>Fútbol Americano</td>
+                                <td>Kansas City Chiefs</td>
+                                <td>Tom Brady</td>
+                            </tr>
+                            <tr>
+                                <td>Fútbol Soccer</td>
+                                <td>Tiburones Rojos de Veracruz</td>
+                                <td>Lionel Messi</td>
+                            </tr>
+                            <tr>
+                                <td>Golf</td>
+                                <td>Deporte Individual</td>
+                                <td>Tiger Woods</td>
+                            </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                    
+                    <p>¿A quién prefieres?</p>
+                    <form>
+                        <a class="button is-success"> Messi </a>
+                        <a class="button" disabled> Ronaldo </a>
+                    </form>
+                    <br><br>
+                </article>
+
+                <article class="content">
+                    <header>
+                        <h3 class="subtitle">Música</h3>
+                    </header>
+                    
+                    <p>Me gusta mucho la música. Tanto tocarla como disfrutarla y analizarla.</p>
+                    <p>Mis canciones favoritas son: </p>
+                    <ol>
+                        <li>Playtime - Yanni</li>
+                        <li>Tus Alas - Kim Richards</li>
+                        <li>Cara a cara - Majo y Dan, Marcos Vidal</li>
+                    </ol>
+                    
+                    <p>¿Con cuál <strong>color</strong> indentificarías a la música?</p>
+                    <form>
+                        <label> La música es color...
+                            <input type="color"/>
+                        </label>
+                    </form> 
+                    
+                    <br><br>
+                </article>
+
+                <article class="content">
+                    <header>
+                        <h3 class="subtitle">Hobbies/Pasatiempos</h3>
+                    </header>
+                    
+                    <p>En general me gusta leer, conocer nuevas culturas, jugar ajedrez, ver series, películas y deportes.</p>
+                </article>
+            </section>
+
+            <section class="section">
+                <header>
+                    <h2 class="title">Preguntas del Laboratorio</h2>
+                </header>
+                <br>
+                <article class="content">
+                    <h4 class="subtitle">
+                        Describe Material Design 
+                    </h4> 
+                    <p>
+                        De acuerdo con Google: “Material Design es un lenguaje visual que sintetiza los principios clásicos del buen diseño con la innovación de la tecnología y la ciencia”. 
+                        En otras palabras, <strong>Material Design</strong> es un sistema de diseño con el fin de ser coherente, funcional estático y parecido a la realidad. 
+                        Busca adaptarse con cualquier dispositivo y aplicarse para páginas web y diseño web. 
+                    </p>
+                </article>
+            </section>
+
+            <section class="section">
+                <header>
+                    <h2 class="title">Datos de Contacto</h2>
+                </header>
+                <br>
+                <div>Nombre: Rafael Hinojosa López</div>
+                <div>Matrícula: A01705777</div>
+                <div>Correo: a01705777@itesm.mx</div>
+                <div>Instagram: <a href="https://www.instagram.com/rafahinojosa.embajadorestec/"> @rafahinojosa.embajadorestec</a></div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div>Laboratorio 6 de tc2005b</div>
+            <div>Editor HTML utilizado: Visual Studio Code</div>
+            <div>Página web del editor: <a href="https://code.visualstudio.com/"> https://code.visualstudio.com </a></div>
+        </footer>
+    </body>
+</html>
