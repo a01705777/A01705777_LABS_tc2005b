@@ -80,10 +80,12 @@ function contador_main() {
     let numeros = []; 
     
     let array = document.getElementById("array_contador"); 
+    let temp_array = "Los elementos del array son: ";
+   
     let resultados = document.getElementById("resultados_contador"); 
+    let temp_resultados = "";
 
     //Llenar Array e imprimirlo en HTML 
-    array.innerHTML += "Los elementos del array son: "
     for(let i=0; i<n; i++) {
         let num = Math.random(); 
         if(num < 0.5) 
@@ -91,16 +93,18 @@ function contador_main() {
         num = Math.floor(num * 100); 
 
         numeros.push(num); 
-        array.innerHTML += num;
-        if(i < n-1) array.innerHTML += ", ";
+        temp_array += num;
+        if(i < n-1) temp_array += ", ";
     }
-    array.innerHTML += "<br>";
+    temp_array += "<br>";
+    array.innerHTML = temp_array; 
     
     //Resultados
     let resultados_arr = contador(numeros); 
-    resultados.innerHTML = "Negativos = " + resultados_arr[0] + "<br>";
-    resultados.innerHTML += "Ceros = " + resultados_arr[1] + "<br>"; 
-    resultados.innerHTML += "Positivos = " + resultados_arr[2] + "<br>";
+    temp_resultados += "Negativos = " + resultados_arr[0] + "<br>";
+    temp_resultados += "Ceros = " + resultados_arr[1] + "<br>"; 
+    temp_resultados += "Positivos = " + resultados_arr[2] + "<br>";
+    resultados.innerHTML = temp_resultados; 
 
     return; 
 }
