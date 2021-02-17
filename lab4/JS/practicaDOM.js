@@ -127,28 +127,37 @@ function calcula_promedios(grades, grupos) {
 function promedios_main() {
     let grupos = Math.floor(Math.random() * 10) + 1; 
     let grades = [];
-    let calificaciones = document.getElementById("calificaciones_grupo"); 
-    let promedios_finales = document.getElementById("promedios_grupo"); 
+    
+    let calificaciones = ""; 
+    let calificaciones_html = document.getElementById("calificaciones_grupo"); 
+    
+    let promedios_finales = ""; 
+    let promedios_html = document.getElementById("promedios_grupo"); 
 
     //Crear grupos y llenar calificaciones
     for(let i=0; i<grupos; i++) {
         grades[i] = [];
+        calificaciones += "Grupo " + (i+1) + ": ";
         for(let j=0; j<grupos; j++) {
             let grade = Math.floor(Math.random() * 10);
             grades[i][j] = grade; 
-            calificaciones.innerHTML += grades[i][j] + " "; 
+            calificaciones += grades[i][j] + " "; 
         }
-        calificaciones.innerHTML += "<br>";
+        calificaciones += "<br>";
     }
-    
+    calificaciones_html.innerHTML = calificaciones; 
+
     //Calcular promedios e imprimir resultados 
     let promedios = []; 
     promedios = calcula_promedios(grades, grupos); 
         
     //Promedios finales
     for(let i=0; i<grupos; i++) {
-        promedios_finales.innerHTML += "Promedio " + (i+1) + " = " + promedios[i] + "<br>";
+        promedios_finales += "Promedio " + (i+1) + " = " + promedios[i] + "<br>";
     }
+    promedios_html.innerHTML = promedios_finales; 
+
+    return; 
 }
 
 
