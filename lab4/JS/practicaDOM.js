@@ -24,5 +24,35 @@ function potencias_main() {
     }    
 }
 
+//2. Función suma 
+function suma() {
+    let num1 = Math.floor(Math.random() * 100);
+    let num2 = Math.floor(Math.random() * 100); 
+    let suma = num1 + num2; 
 
- 
+    texto = "Resuelva la siguiente operación: " + num1 + " + " + num2 + " = ";  
+    let start = new Date(); 
+    let numero = prompt(texto); 
+    let finish = new Date();
+    
+    let time = (finish - start) / 1000; 
+    
+    return [(numero == suma), time];
+}
+
+function suma_main() {
+    let resultados = [];
+    resultados = suma(); 
+    
+    let resultado = document.getElementById("resultado_suma"); 
+    let tiempo = document.getElementById("tiempo_suma"); 
+
+    if(resultados[0] === true) {
+        resultado.innerHTML = "¡Correcto!";
+    }
+    else {
+        resultado.innerHTML = "¡Incorrecto!";
+    }
+    
+    tiempo.innerHTML = "Tiempo: " + resultados[1] + " segundos";    
+}
