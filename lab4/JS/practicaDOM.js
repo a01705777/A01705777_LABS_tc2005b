@@ -56,3 +56,51 @@ function suma_main() {
     
     tiempo.innerHTML = "Tiempo: " + resultados[1] + " segundos";    
 }
+
+//3. Función Contador 
+function contador(numeros) {
+    let negativos=0, ceros=0, positivos=0; 
+    for(let i=0; i<numeros.length; i++) {
+        if(numeros[i] < 0) {
+            negativos ++;
+        }
+        else if(numeros[i] === 0) {
+            ceros ++; 
+        }
+        else {
+            positivos ++; 
+        }
+    }
+
+    return [negativos, ceros, positivos];
+}
+
+function contador_main() {
+    let n = prompt("Ingrese el número de elementos: ");
+    let numeros = []; 
+    
+    let array = document.getElementById("array_contador"); 
+    let resultados = document.getElementById("resultados_contador"); 
+
+    //Llenar Array e imprimirlo en HTML 
+    array.innerHTML += "Los elementos del array son: "
+    for(let i=0; i<n; i++) {
+        let num = Math.random(); 
+        if(num < 0.5) 
+            num *= -1; 
+        num = Math.floor(num * 100); 
+
+        numeros.push(num); 
+        array.innerHTML += num;
+        if(i < n-1) array.innerHTML += ", ";
+    }
+    array.innerHTML += "<br>";
+    
+    //Resultados
+    let resultados_arr = contador(numeros); 
+    resultados.innerHTML = "Negativos = " + resultados_arr[0] + "<br>";
+    resultados.innerHTML += "Ceros = " + resultados_arr[1] + "<br>"; 
+    resultados.innerHTML += "Positivos = " + resultados_arr[2] + "<br>";
+
+    return; 
+}
