@@ -224,23 +224,28 @@ function initMat_acm(dp, coins) {
 }
 
 function solve_acm(dp) { 
+    let title_output = document.getElementById("title_output"); 
+    let respuesta_html = document.getElementById("357respuesta");
+    let respuesta = ""; 
     while(true) {
         let n = prompt("Ingrese un número o presione Cancelar si desea ver el resultado: ");
         if(n != null) {
             let answer = dp[4][n]; 
             if(answer == 1) {
-                document.write("There is only 1 way ");
+                respuesta += "There is only 1 way ";
             }
             else {
-                document.write("There are " + answer + " ways ");
+                respuesta += "There are " + answer + " ways ";
             }
-            document.write("to produce " + n + " cents change.")
-            document.write("<br>");
+            respuesta += "to produce " + n + " cents change." + "<br>" + "<br>";
         }
         else {
             break; 
         }
     }
+
+    title_output.innerHTML = "Respuestas: " + "<br>";
+    respuesta_html.innerHTML = respuesta; 
 
     return; 
 }
