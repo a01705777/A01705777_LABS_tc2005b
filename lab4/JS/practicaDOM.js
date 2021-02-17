@@ -1,3 +1,11 @@
+/*
+    Autor: Rafael Hinojosa López
+    Matrícula: A01705777
+    Fecha: 17 de febrero del 2021
+    Curso: TC2005B
+    Laboratorio 4: Fundamentos de JavaScript
+*/
+
 //1. Función potencias 
 function potencias(numero) {
     let titulo = document.getElementById("titulo_potencias"); 
@@ -187,3 +195,65 @@ function inverso_main() {
     
     return; 
 }
+
+
+//6. Problema ACM
+/*
+Problema: 357 - Let Me Count The Ways
+Juez: UVa Online Judge
+Descripción Original: https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&category=5&page=show_problem&problem=293
+U-debug: https://www.udebug.com/UVa/357
+*/
+function initMat_acm(dp, coins) { 
+    dp[0] = [];
+    for(let i=0; i<=30000; i++) {
+        dp[0][i] = 1; 
+    }
+
+    for(let i=1; i<5; i++) {
+        dp[i] = [];
+        for(let j=0; j<=30000; j++) {
+            dp[i][j] = dp[i-1][j];
+            if(j - coins[i] >= 0) {
+                dp[i][j] += dp[i][j - coins[i]];
+            }
+        }
+    }
+
+    return dp; 
+}
+
+function solve_acm(dp) { 
+    while(true) {
+        let n = prompt("Ingrese un número o presione Cancelar si desea ver el resultado: ");
+        if(n != null) {
+            let answer = dp[4][n]; 
+            if(answer == 1) {
+                document.write("There is only 1 way ");
+            }
+            else {
+                document.write("There are " + answer + " ways ");
+            }
+            document.write("to produce " + n + " cents change.")
+            document.write("<br>");
+        }
+        else {
+            break; 
+        }
+    }
+
+    return; 
+}
+
+function acm_main() {
+    let dp = []; 
+    let coins = Array.of(1, 5, 10, 25, 50);
+
+    dp = initMat_acm(dp, coins); 
+    solve_acm(dp);  
+    
+    return; 
+}
+
+
+ 

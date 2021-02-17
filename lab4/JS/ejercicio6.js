@@ -7,7 +7,7 @@ Descripción Original: https://onlinejudge.org/index.php?option=onlinejudge&Item
 U-debug: https://www.udebug.com/UVa/357
 */
 
-function initMat() {
+function initMat_acm() {
     dp[0] = [];
     for(let i=0; i<=30000; i++) {
         dp[0][i] = 1; 
@@ -26,7 +26,7 @@ function initMat() {
     return; 
 }
 
-function solve() { 
+function solve_acm() { 
     while(true) {
         let n = prompt("Ingrese un número o presione Cancelar si desea ver el resultado: ");
         if(n != null) {
@@ -48,11 +48,11 @@ function solve() {
     return; 
 }
 
-function main() {
+function acm_main() {
     var dp = Array(); 
     const coins = Array.of(1, 5, 10, 25, 50);
-    initMat(); 
-    solve();        
+    initMat_acm(); 
+    solve_acm();        
 }
 
 
