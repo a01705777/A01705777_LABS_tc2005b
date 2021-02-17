@@ -9,8 +9,8 @@ function potencias(numero) {
     }
     
     let powers_n = document.getElementById("potencias_n"); 
-    powers_n.innerHTML = tabla; 
-
+    //powers_n.innerHTML = tabla; 
+    document.write(tabla); 
     return; 
 }
 
@@ -102,5 +102,75 @@ function contador_main() {
     resultados.innerHTML += "Ceros = " + resultados_arr[1] + "<br>"; 
     resultados.innerHTML += "Positivos = " + resultados_arr[2] + "<br>";
 
+    return; 
+}
+
+//4. Función Calcular promedios 
+function calcula_promedios(grades, grupos) {
+    let promedios = [];
+    for(let i=0; i<grupos; i++) {
+        let suma = 0; 
+        for(let j=0; j<grupos; j++) {
+            suma += grades[i][j];
+        }
+        let avg = Number(Math.round(suma/grupos + 'e2')+ 'e-2'); 
+        promedios.push(avg);
+    }
+
+    return promedios; 
+}
+
+function promedios_main() {
+    let grupos = Math.floor(Math.random() * 10) + 1; 
+    let grades = [];
+    let calificaciones = document.getElementById("calificaciones_grupo"); 
+    let promedios_finales = document.getElementById("promedios_grupo"); 
+
+    //Crear grupos y llenar calificaciones
+    for(let i=0; i<grupos; i++) {
+        grades[i] = [];
+        for(let j=0; j<grupos; j++) {
+            let grade = Math.floor(Math.random() * 10);
+            grades[i][j] = grade; 
+            calificaciones.innerHTML += grades[i][j] + " "; 
+        }
+        calificaciones.innerHTML += "<br>";
+    }
+    
+    //Calcular promedios e imprimir resultados 
+    let promedios = []; 
+    promedios = calcula_promedios(grades, grupos); 
+        
+    //Promedios finales
+    for(let i=0; i<grupos; i++) {
+        promedios_finales.innerHTML += "Promedio " + (i+1) + " = " + promedios[i] + "<br>";
+    }
+}
+
+
+//5. Función inverso 
+function inverso(numero) {
+    let respuesta = "";
+
+    //Para casos donde hay números enteros positivos
+    do {
+        respuesta += (numero % 10); 
+        numero = Math.floor(numero / 10); 
+    }
+    while(numero > 0);
+    
+    return respuesta; 
+}
+
+function inverso_main() {
+    let numero = prompt("Ingresa un número: "); 
+    if(numero < 0 || (numero - Math.floor(numero) != 0)) {
+        alert("Ingresa un número entero positivo.");
+    }
+    else {
+        let respuesta = document.getElementById("inverso_numero");
+        respuesta.innerHTML = "El inverso de " + numero + " es " + inverso(numero) + "<br>";
+    }
+    
     return; 
 }
