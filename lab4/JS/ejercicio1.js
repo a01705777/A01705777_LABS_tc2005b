@@ -7,7 +7,6 @@ function potencias(numero) {
     return; 
 }
 
-
 let numero = prompt("Escribe un número entre el 1 y 100");
 if(numero < 1 || numero > 100) {
     document.write("El número deb estar en el rango de 1 y 100");

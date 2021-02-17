@@ -28,7 +28,7 @@ function initMat() {
 
 function solve() { 
     while(true) {
-        let n = prompt("");
+        let n = prompt("Ingrese un número o presione Cancelar si desea ver el resultado: ");
         if(n != null) {
             let answer = dp[4][n]; 
             if(answer == 1) {
@@ -48,7 +48,12 @@ function solve() {
     return; 
 }
 
-var dp = Array(); 
-const coins = Array.of(1, 5, 10, 25, 50);
-initMat(); 
-solve(); 
+function main() {
+    var dp = Array(); 
+    const coins = Array.of(1, 5, 10, 25, 50);
+    initMat(); 
+    solve();        
+}
+
+
+ 
