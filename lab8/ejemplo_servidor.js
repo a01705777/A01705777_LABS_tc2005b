@@ -7,7 +7,7 @@ const server = http.createServer( (request, response) => {
     console.log("Hola ingresa a http://localhost:" + PUERTO); 
     
     //Imprimir en http://localhost:PUERTO
-    response.setHeader('Content-Type', 'text/html'); 
+    response.setHeader('Content-Type', 'text/html');    //necesario para dar FORMATO y entender HTML
     response.write("Hola desde el servidor");     
     response.write("<h1>Hola desde el servidor</h1>");
     response.end(); 
@@ -15,6 +15,8 @@ const server = http.createServer( (request, response) => {
 
 //Parámetro es el PUERTO...
 var PUERTO = 3000; 
+console.log("Hola, ingresa a http://localhost:" + PUERTO + " desde tu navegador"); 
 server.listen(PUERTO); 
 
+//Parar servidor: Ctrl + C
 
