@@ -27,21 +27,24 @@ function initMat_acm() {
 }
 
 function solve_acm() { 
-    while(true) {
-        let n = prompt("Ingrese un número o presione Cancelar si desea ver el resultado: ");
-        if(n != null) {
-            let answer = dp[4][n]; 
-            if(answer == 1) {
-                document.write("There is only 1 way ");
-            }
-            else {
-                document.write("There are " + answer + " ways ");
-            }
-            document.write("to produce " + n + " cents change.")
-            document.write("<br>");
+    let testcases = 10; 
+    
+    //Generar índices aleatorios 
+    let indices = [];
+    for(let i=0; i<testcases; i++) {
+        let index = Math.floor(Math.random() * 10000);
+        indices.push(index); 
+    }
+
+    //Print the output for the random indices generated above
+    for(let i=0; i<testcases; i++) {
+        let answer = dp[4][indices[i]]; 
+        
+        if(answer == 1) {
+            console.log("There is only 1 way ");
         }
         else {
-            break; 
+            console.log("There are " + answer + " ways to produce " + indices[i] + " cents change.");
         }
     }
 
