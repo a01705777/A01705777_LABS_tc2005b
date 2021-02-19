@@ -33,15 +33,4 @@ function promedio_main() {
     return; 
 }  
 
-//2. Función escribir en archivo de texto 
-function writeInFile(cadena) {
-    const filesystem = require('fs'); 
-    filesystem.writeFileSync('output.txt', cadena);     
-}
-
-function main() {
-    //1. Generate array
-    promedio_main(); 
-}
-
-main(); 
+promedio_main(); 
