@@ -98,7 +98,7 @@ const server = http.createServer( (request, response) => {
     response.write("</section>"); 
 
     //Datos de Contacto
-    response.write("<br>");
+    response.write("<br><br>");
     response.write("<section>");
     response.write("<h2>Datos de Contacto</h2>"); 
     response.write("<div>Nombre: Rafael Hinojosa Lopez</div>");
@@ -124,4 +124,5 @@ const server = http.createServer( (request, response) => {
 
 const PUERTO = 3000; 
 console.log("Hola, ingresa a http://localhost:" + PUERTO + " desde tu navegador"); 
+//Lanzamos petición al servidor...
 server.listen(PUERTO); 
