@@ -3,9 +3,9 @@ const http = require('http');
 const server = http.createServer( (request, response) => {
     console.log("Hola, alguien ingreso a tu página web"); 
 
+    //Hacer todo el HTML del lab1 o tal vez otro lab 
     response.setHeader('Content-Type', 'text/html'); 
     
-    //Hacer todo el HTML del lab1 o tal vez otro lab 
     //HEAD
     response.write("<head><title> Rafa Hinojosa </title></head>");
 
@@ -17,6 +17,7 @@ const server = http.createServer( (request, response) => {
     response.write("<main>");
     
     //Un poco sobre mi 
+    response.write("<br>");
     response.write("<section>")
     response.write("<header><h2> Un poco sobre mi </h2></header>");
     response.write("<p> Hola! Soy Rafael Hinojosa Lopez y estudio el 4to semestre de Ingenieria en Tecnologias Computacionales.</p>");
@@ -24,6 +25,7 @@ const server = http.createServer( (request, response) => {
     response.write("</section>");
     
     //Aficiones
+    response.write("<br>");
     response.write("<section>"); 
     response.write("<h2>Aficiones</h2>"); 
     
@@ -63,12 +65,20 @@ const server = http.createServer( (request, response) => {
     response.write("<td>Tiger Woods</td>");
     response.write("</tr>");
     response.write("</tbody>"); 
-    
+
     response.write("<tfoot></tfoot>"); 
     response.write("</table>"); 
+
+    response.write("<p>A quien prefieres?</p>");
+    response.write("<form>"); 
+    response.write("<input type='button' value='Messi'"); 
+    response.write("<span>    </span>"); 
+    response.write("<input type='button' value='Ronaldo'"); 
+    response.write("</form>");
     response.write("</article>"); 
 
     //Música
+    response.write("<br>");
     response.write("<article>");
     response.write("<header><h3>Musica</h3></header>"); 
     response.write("<p>Me usta mucho hacer y disfrutar de la musica.</p>");
@@ -78,17 +88,39 @@ const server = http.createServer( (request, response) => {
     response.write("<li>Tus Alas - Kim Richards</li>"); 
     response.write("<li>Cara a cara - Majo y Dan, Marcos Vidal</li>"); 
     response.write("</ol>"); 
+    
+    response.write("<p>Con cual <strong>color</strong> identificas la musica?</p>");
+    response.write("<form>");
+    response.write("<label>La musica es color...  ");
+    response.write("<input type='color'/></label>"); 
+    response.write("</form>"); 
     response.write("</article>");
-
     response.write("</section>"); 
 
+    //Datos de Contacto
+    response.write("<br>");
+    response.write("<section>");
+    response.write("<h2>Datos de Contacto</h2>"); 
+    response.write("<div>Nombre: Rafael Hinojosa Lopez</div>");
+    response.write("<div>Matricula: A01705777</div>");
+    response.write("<div>Correo: a01705777@itesm.mx</div>");
+    response.write("<div>Instagram: <a href='https://www.instagram.com/rafahinojosa.embajadorestec/'> @rafahinojosa.embajadorestec</a></div>");
+    response.write("</section>");
+
     response.write("</main>");
+
+    //Footer
+    response.write("<footer>");
+    response.write("<br><br>")
+    response.write("<div>Laboratorio 8 de tc2005b</div>"); 
+    response.write("<div>Editor HTML utilizado: Visual Studio Code</div>");
+    response.write("<div>Pagina web del editor: <a href='https://code.visualstudio.com/'> https://code.visualstudio.com </a></div>");
+    response.write("</footer>");
+
     response.write("</body>");
-    
     
     response.end();
 }); 
-
 
 const PUERTO = 3000; 
 console.log("Hola, ingresa a http://localhost:" + PUERTO + " desde tu navegador"); 
