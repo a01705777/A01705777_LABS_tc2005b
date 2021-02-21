@@ -1,0 +1,11 @@
+Fuentes adicionales: 
+
+https://www.w3schools.com/css/css_dimension.asp
+
+https://blog.hubspot.com/website/center-div-css#:~:text=To%20center%20a%20div%20horizontally%20on%20a%20page%2C%20simply%20set,equally%20between%20the%20two%20margins.
+
+https://www.w3schools.com/tags/tag_div.asp
+
+https://codepen.io/huyden181/pen/pbwjAa
+
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
