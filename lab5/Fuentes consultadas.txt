@@ -8,4 +8,8 @@ https://www.w3schools.com/tags/tag_div.asp
 
 https://codepen.io/huyden181/pen/pbwjAa
 
-https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
+https://www.w3schools.com/jsref/dom_obj_text.asp
+
+https://www.w3schools.com/jsref/prop_text_type.asp
+
+Después de lo sencillo: https://www.youtube.com/watch?v=j-nddSkOmlA
