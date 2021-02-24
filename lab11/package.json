@@ -1,7 +1,7 @@
 {
   "name": "lab11",
   "version": "1.0.0",
-  "description": "Lab 11 Node + Express",
+  "description": "Laboratorio 11 Node + Express",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,16 @@
     "url": "git+https://github.com/a01705777/A01705777_LABS_tc2005b.git"
   },
   "keywords": [
-    "express"
+    "express",
+    "npm"
   ],
   "author": "Rafael Hinojosa López",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/a01705777/A01705777_LABS_tc2005b/issues"
   },
-  "homepage": "https://github.com/a01705777/A01705777_LABS_tc2005b#readme"
+  "homepage": "https://github.com/a01705777/A01705777_LABS_tc2005b#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
