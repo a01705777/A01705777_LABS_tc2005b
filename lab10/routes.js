@@ -42,26 +42,35 @@ const requestHandler = (request, response) => {
         response.setHeader('Content-Type', 'text/html');
         response.write("<html>");
         //HEAD
-        response.write('<head><meta charset = "UTF-8"><title>HTML Theory</title></head>');
+        response.write('<head><meta charset = "UTF-8"><title>CSS Theory</title></head>');
         
         //BODY
         response.write("<body>");
-        response.write("<header><h1> Datos Interesantes de HTML </h1></header>");
+        response.write("<header><h1> Datos Interesantes de CSS </h1></header>");
         
+        response.write("<p><strong>1. Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?</strong></p>");
+        response.write("<p>!important es una palabra reservada de CSS que debe utilizarse con cuidado. Su función es que al aplicarla a algún comando de CSS, este comando no cambiará aunque se escriba lo contrario, por ejemplo: </p>");
+        response.write("<p>p { padding: 1em !important; } </p>");
+        response.write("<p>.paragraph { padding: 4em; }</p>");
+        response.write("<p>Al querer aplicar la clase paragraph a algún párrafo en HTML, el padding no será de 4em como lo indica la clase, sino de 1em, porque fue declarado como ¡important en el selector de párrafo (p) previamente.</p>");
+        response.write("<p>Al querer aplicar la clase paragraph a algún párrafo en HTML, el padding no será de 4em como lo indica la clase, sino de 1em, porque fue declarado como ¡important en el selector de párrafo (p) previamente.</p>");
+        response.write("<p> Con la experiencia que tengo con HTML5, no considero necesario el uso de ¡important, pues al utilizar correctamente CSS podremos priorizar los comandos de manera correcta. Además, el utilizar esta palabra clave puede afectar el que alguien más quiera modificar tu código, pues deberá conocer muy bien las reglas impuestas por ¡important. </p>");
+        response.write("<hr>");
+
+        response.write("<p><strong>2. Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado? </strong></p>");
+        response.write("<p> Por el requisito de software no funcional de portabilidad: adaptabilidad. Las imágenes que se escojan para ser mostradas en una página web deben tener las medidas correctas para los distintos tamaños de pantallas que hay; por ejemplo: celulares, tabletas, laptops, monitores, etc. Si no se cuidan los aspectos de sus medidas para diferentes tamaños de pantallas tendremos problemas con la resolución y espacio mostrado de la imagen.</p>");
+        response.write("<hr>");
+        
+
+        response.write("<p><strong>3. Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong></p>");
         response.write("<p><strong>1. ¿Cuál es el propóstito de los métodos de HTTP: GET, HEAD y POST?</strong></p>");
         response.write("<ul>");
-        response.write("<li><strong>GET: </strong> Obtener información de un recurso específico y no modificarlos. </li>");
-        response.write("<li><strong>HEAD: </strong> Obtener headers y no body de un recurso. Es muy parecido a GET.  </li>");
-        response.write("<li><strong>POST: </strong> Enviar datos al servidor. </li>");
-        response.write("</ul><hr>");
-
-        response.write("<p><strong> 2. ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong></p>");
-        response.write("<p>POST. Envías tus datos al servidor y este te responderá con un recurso. La página principal de un actor registrado en la base de datos de la página web, o un mensaje de error. Lo que se envía por POST no aparece en el URL, por lo que no aparecerán tus datos al público en general. </p>");
-        response.write("<hr>");
-       
-        response.write("<p><strong>3. ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong></p>");
-        response.write("<p> GET. Este método se utiliza para pedir la información y datos del sitio web. Una vez que el servidor acepta la petición, entonces el usuario puede ver en su pantalla el sitio web.  </p>");
-
+        response.write("<li><strong>Porcentaje %: </strong> Es el porcentaje relativo de un objeto con su elemento contenedor.  </li>");
+        response.write("<li><strong>Pixel px: </strong> Es una medida relativa  y representa cuántos puntos visibles tiene una pantalla. </li>");
+        response.write("<li><strong>Punto pt: </strong> Es una medida absoluta y 1 punto = 1/72 pulgadas; es decir, 0.35 mm aproximadamente. </li>");
+        response.write("</ul>");
+        response.write("<p>Las medidas absolutas son poco utilizadas en el desarrollo web porque no permiten la adaptabilidad de los elementos con pantallas de diferentes tamaños. En cambio, los pixeles y porcentajes sí permiten esa adaptabilidad o compatibilidad. Con el porcentaje (%) podemos tener tamaños relativos y adecuados según la pantalla que despliegue la información, mientras que los pixeles nos sirven para que ciertos elementos tengan siempre tamaños precisos, sin importar la pantalla.</p>");
+        
         response.write("</body>");
         response.write("</html>");
         response.end();
