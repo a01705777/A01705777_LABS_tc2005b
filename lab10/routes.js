@@ -63,7 +63,6 @@ const requestHandler = (request, response) => {
         
 
         response.write("<p><strong>3. Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong></p>");
-        response.write("<p><strong>1. ¿Cuál es el propóstito de los métodos de HTTP: GET, HEAD y POST?</strong></p>");
         response.write("<ul>");
         response.write("<li><strong>Porcentaje %: </strong> Es el porcentaje relativo de un objeto con su elemento contenedor.  </li>");
         response.write("<li><strong>Pixel px: </strong> Es una medida relativa  y representa cuántos puntos visibles tiene una pantalla. </li>");
@@ -78,9 +77,47 @@ const requestHandler = (request, response) => {
     //JS
     else if(request.url === "/js_theory") {
         console.log("Someone entered to the JS_Theory Page");
+        
+        //Escribir todo el HTML 
+        response.setHeader('Content-Type', 'text/html');
+        response.write("<html>");
+        //HEAD
+        response.write('<head><meta charset = "UTF-8"><title>JS Theory</title></head>');
+        
+        //BODY
+        response.write("<body>");
+        response.write("<header><h1> Datos Interesantes de JavaScript </h1></header>");
+        
+        response.write("<p><strong>1. ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </strong></p>");
+        response.write("<ul>");
+        response.write("<li><strong>getDate(): </strong> retorna los días del mes [1,…, 31] </li>");
+        response.write("<li><strong>getDay(): </strong> retorna los días de la semana [0, …, 6] </li>");
+        response.write("<li><strong>getFullYear() </strong> retorna el año.  </li>");
+        response.write("<li><strong>getMilliseconds(): </strong> retorna los milisegundos [0, …, 999] </li>");
+        response.write("<li><strong>getMinutes(): </strong> retorna los minutos [0, …, 59] </li>")
+        response.write("<li><strong>getHours(): </strong> retorna la hora [0, …, 23] </li>");
+        response.write("</ul>");
+        response.write("<hr>");
+
+        response.write("<p><strong>2. ¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</strong></p>");
+        response.write("<ul>");
+        response.write("<li><strong>toString(): </strong> convierte un arreglo en un string con los elementos separados por comas.  </li>");
+        response.write("<li><strong>pop(): </strong> elimina el último elemento del arreglo. </li>");
+        response.write("<li><strong>push(): </strong> agrega un elemento al final del arreglo. </li>");
+        response.write("<li><strong>concat(): </strong> retorna un nuevo arreglo hecho por la concatenación de otros arreglos. </li>");
+        response.write("<li><strong>splice(): </strong>  se utiliza para insertar elementos en una posición del array y eliminar un cierto número de elementos a partir de esa posición. </li>")
+        response.write("</ul>");
+        response.write("<hr>");
+        
+        response.write("<p><strong>3. ¿Cómo se declara una variable con alcance local dentro de una función? </strong></p>");
+        response.write("<p> Con la palabra reservada let. Por ejemplo: let x = 10; </p>");
+
+        response.write("</body>");
+        response.write("</head>");
+        response.end();
     }
  
-    // /
+    // / and PERSONAL 
     else if(request.url === "/" || request.url === ""){
         console.log("Someone entered to your Personal Page");
 
