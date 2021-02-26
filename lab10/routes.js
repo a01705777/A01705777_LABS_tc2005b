@@ -1,3 +1,8 @@
+const filesystem = require('fs');
+
+const names = [];
+var names_string = "Las siguientes personas entraron a tu sitio web: " + "\n";
+
 const requestHandler = (request, response) => {
     console.log("Hola desde el servidor");
     console.log(request.url);
@@ -117,8 +122,8 @@ const requestHandler = (request, response) => {
         response.end();
     }
  
-    // / and PERSONAL 
-    else if(request.url === "/" || request.url === ""){
+    // PERSONAL GET 
+    else if(request.url === "/" && request.method === "GET"){
         console.log("Someone entered to your Personal Page");
 
         //HTML
@@ -135,6 +140,12 @@ const requestHandler = (request, response) => {
         //MAIN
         response.write("<main>");
         
+        //Submit Form:
+        response.write("<p><h3>Escribe tu nombre: </h3></p>");
+        response.write('<form action="/" method="POST">');              //action es a cual ruta ir una vez enviado el nombre, metodo es POST porque lo manda el usuario al servidor
+        response.write('<input type="text" name="nombre">');            //Metemos texto pero usamos atr name para que el servidor lo reconozca
+        response.write('<input type="submit" value="Enviar"></form>');  //Submit porque lo enviaremos 
+
         //Un poco sobre mi 
         response.write("<br>");
         response.write("<section>")
@@ -239,6 +250,32 @@ const requestHandler = (request, response) => {
         response.write("</body>");
         response.write("</html>");
         response.end();
+    }
+    else if(request.url === "/" && request.method === "POST") {
+        const names_temp = [];
+
+        //Utilizare metodo on(), el cual es un listener a algun evento...
+        //'data' indica que lo hara para todos los datos recibidos
+        //Creo una funcion que recibe un dato y lo procesa...
+        request.on('data', (nombre) => {
+            console.log(nombre + " ingresó a tu página web");
+            names_temp.push(nombre);
+        });
+        
+        //Convertir datos a string y guardarlos 
+        request.on('end', () => {
+            const all_names = Buffer.concat(names_temp).toString();
+            const new_name = all_names.split('=')[1];
+            names.push(new_name);
+            names_string += new_name + "\n";
+
+            response.statusCode = 302;
+            response.setHeader('Location', '/');        //Regresa a la pagina principal 
+            
+            filesystem.writeFileSync('nombres.txt', names_string);            
+            
+            return response.end();
+        });
     }
     // 404 - Not Found
     else {
