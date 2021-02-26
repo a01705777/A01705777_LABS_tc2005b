@@ -264,10 +264,20 @@ const requestHandler = (request, response) => {
         
         //Convertir datos a string y guardarlos 
         request.on('end', () => {
-            const all_names = Buffer.concat(names_temp).toString();
-            const new_name = all_names.split('=')[1];
-            names.push(new_name);
-            names_string += new_name + "\n";
+            let all_names = Buffer.concat(names_temp).toString();
+            let new_name = all_names.split('=')[1]; 
+            
+            //La funcion split me hace un arreglo de strings que se separaron por el parametro de split
+            //Ejemplo: rafael+hinojosa+lopez => [rafael, hinojosa, lopez]. Es un arreglo de size 3  
+            let new_name_split = new_name.split('+');
+
+            let nombre_split = "";
+            for(nombre of new_name_split) {
+                nombre_split += nombre + " ";
+            }
+        
+            names.push(nombre_split);
+            names_string += nombre_split + "\n";
 
             response.statusCode = 302;
             response.setHeader('Location', '/');        //Regresa a la pagina principal 
