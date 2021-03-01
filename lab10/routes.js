@@ -279,7 +279,7 @@ const requestHandler = (request, response) => {
             names.push(nombre_split);
             names_string += nombre_split + "\n";
 
-            response.statusCode = 302;
+            response.statusCode = 302;                  //Status para redireccion...
             response.setHeader('Location', '/');        //Regresa a la pagina principal 
             
             filesystem.writeFileSync('nombres.txt', names_string);            

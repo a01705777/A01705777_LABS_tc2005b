@@ -31,21 +31,29 @@ app.use('/html', (request, response, next) => {
 });
 
 //Get y Post con BodyParser
-app.get('/nuevo_nombre', (request, response, next) => {
+app.get('/nuevo-nombre', (request, response, next) => {
     response.send('<p><h3>Escribe tu nombre: </h3></p> <form action="/nombres" method="POST"> <input type="text" name="nombre"> <input type="submit" value="Enviar"></form>');
 });
 
 app.post('/nombres', (request, response, next) => {
     console.log(request.body);          //Regresa un JSON con la informacion
-    console.log('Nombre directo: ' + request.body.nombre);
+    console.log('Nombre directo: ' + request.body.nombre);      //Esto es 1 linea en comparacion coon las muchas otras del Buffer y todo eso en el lab10
     response.send('<h1> Nombres: </h1> ');
 });
 
-app.use('/', (request, response, next) => {
+app.get('/', (request, response, next) => {
     console.log('Middleware!');
     response.send('<h1> Middleware! </h1>');
 });
 
+app.use( (request, response, next) => {
+    response.statusCode = 404;  //Cambiar valor a variable
+    response.status(404);       //Setter, cambia valor internamente...
+    console.log('Page not found');
+    response.send('Page not found');
+
+    //response.status(404).send('Recurso no encontrado');
+});
 
 app.listen(3000);
 
