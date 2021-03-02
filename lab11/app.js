@@ -1,5 +1,8 @@
 console.log("Ya no tengo que andar reiniciando el servidor gracias a nodemon!!");
 
+//Array of names
+const names = [];
+
 //Basic Express Structure
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -39,6 +42,17 @@ app.post('/nombres', (request, response, next) => {
     console.log(request.body);          //Regresa un JSON con la informacion
     console.log('Nombre directo: ' + request.body.nombre);      //Esto es 1 linea en comparacion coon las muchas otras del Buffer y todo eso en el lab10
     response.send('<h1> Nombres: </h1> ');
+});
+
+app.use('/nombres', (request, response, next) => {
+    let html = '<h1> Personas que han ingresado a tu pagina </h1>';
+    html += '<ol>';
+    for(nombre of names) {
+        html += '<li>' + nombre + '</li>';
+    } 
+    html += '</ol>';
+
+    response.send(html);
 });
 
 app.get('/', (request, response, next) => {
