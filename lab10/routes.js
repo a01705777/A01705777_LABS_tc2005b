@@ -118,7 +118,7 @@ const requestHandler = (request, response) => {
         response.write("<p> Con la palabra reservada let. Por ejemplo: let x = 10; </p>");
 
         response.write("</body>");
-        response.write("</head>");
+        response.write("</html>");
         response.end();
     }
  
