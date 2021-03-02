@@ -16,9 +16,11 @@ const rutasTareas = require('./routes/tareas');
 //Utilizar body Parser:
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//Acceder a los archivos de la carpeta Public
+app.use(express.static(path.join(__dirname, 'public')));
 
+//Modulos de rutas
 app.use('/tareas', rutasTareas);
-
 app.use('/nombres', rutasNombres);
 
 app.get('/personal', (request, response, next) => {
