@@ -1,12 +1,12 @@
 console.log("Ya no tengo que andar reiniciando el servidor gracias a nodemon!!");
 
-//Array of names
-const names = [];
-
 //Basic Express Structure
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+
+//Routeador para utilizar el modulo de nombres, en la carpeta Routes
+const rutasNombres = require('./routes/nombres');
 
 //Middleware
 
@@ -33,28 +33,10 @@ app.use('/html', (request, response, next) => {
     response.send('<h1> Tarea HTML </h1>');
 });
 
-//Get y Post con BodyParser
-app.get('/nuevo-nombre', (request, response, next) => {
-    response.send('<p><h3>Escribe tu nombre: </h3></p> <form action="/nuevo-nombre" method="POST"> <input type="text" name="nombre"> <input type="submit" value="Enviar"></form>');
-});
+/* Ejemplo de app.use con otro modulo
+app.use('/modulo', nombreRuta); */
 
-app.post('/nuevo-nombre', (request, response, next) => {
-    console.log(request.body);          //Regresa un JSON con la informacion
-    console.log('Nombre directo: ' + request.body.nombre);      //Esto es 1 linea en comparacion coon las muchas otras del Buffer y todo eso en el lab10
-    names.push(request.body.nombre);
-    response.redirect('/nombres');
-});
-
-app.use('/nombres', (request, response, next) => {
-    let html = '<h3> Personas que han ingresado a tu pagina </h3>';
-    html += '<ol>';
-    for(nombre of names) {
-        html += '<li>' + nombre + '</li>';
-    } 
-    html += '</ol>';
-
-    response.send(html);
-});
+app.use('/nombres', rutasNombres);
 
 app.get('/', (request, response, next) => {
     console.log('Middleware!');
