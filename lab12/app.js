@@ -16,17 +16,20 @@ const rutasTareas = require('./routes/tareas');
 //Utilizar body Parser:
 app.use(bodyParser.urlencoded({ extended: false }));
 
-/* Ejemplo de app.use con otro modulo
-app.use('/modulo', nombreRuta); */
 
 app.use('/tareas', rutasTareas);
 
 app.use('/nombres', rutasNombres);
 
+app.get('/personal', (request, response, next) => {
+    response.sendFile(path.join(__dirname, 'views', 'personal.html'));
+})
+
 app.get('/', (request, response, next) => {
     console.log('Estas en sobre mi');
     response.send('Sobre mi');
 });
+
 
 app.use( (request, response, next) => {
     response.statusCode = 404;  //Cambiar valor a variable

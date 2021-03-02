@@ -7,4 +7,9 @@ router.get('/html', (request, response, next) => {
     response.send('<h1> Tarea HTML </h1>');
 });
 
+router.use('/', (reques, response, next) => {
+    console.log('Estas en tareas');
+    response.send('<h1> Tareas </h1>');
+})
+
 module.exports = router;
