@@ -5,6 +5,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const path = require('path');
+
 //Routeador para utilizar el modulo de nombres, en la carpeta Routes
 const rutasNombres = require('./routes/nombres');
 
@@ -13,22 +15,22 @@ const rutasNombres = require('./routes/nombres');
 //Utilizar body Parser:
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/sobre_mi/deportes', (request, response, next) => {
+app.get('/sobre_mi/deportes', (request, response, next) => {
     console.log('Estas en deportes');
     response.send('<h1> Messi the best </h1>');
 });
 
-app.use('/sobre_mi/musica', (request, response, next) => {
+app.get('/sobre_mi/musica', (request, response, next) => {
     console.log('Se va directo a sobre mi por el next');
     next(); //Se va al siguiente que tenga el mismo patron minimo...  '/'
 });
 
-app.use('/sobre_mi', (request, response, next) => {
+app.get('/sobre_mi', (request, response, next) => {
     console.log('Estas en sobre mi');
     response.send('Sobre mi');
 });
 
-app.use('/html', (request, response, next) => {
+app.get('/html', (request, response, next) => {
     console.log('Estas en html');
     response.send('<h1> Tarea HTML </h1>');
 });
