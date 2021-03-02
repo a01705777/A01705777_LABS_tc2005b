@@ -44,7 +44,7 @@ app.get('/', (request, response, next) => {
 });
 
 app.use( (request, response, next) => {
-    response.status(404).send('<h1> Page not found </h1>');
+    response.status(404).send('<h1> Page Not Found </h1>');
 });
 
 app.listen(3000);

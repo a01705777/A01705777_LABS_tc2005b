@@ -109,10 +109,14 @@ router.get('/js', (request, response, next) => {
     response.send(js);
 });
 
-router.use('/', (reques, response, next) => {
+router.get('/', (reques, response, next) => {
     console.log('Estas en tareas');
     response.send('<h1> Tareas </h1>');
-})
+});
+
+router.use( (request, response, next) => {
+    response.status(404).send('<h1> Page Not Found </h1>');
+});
 
 module.exports = router;
 

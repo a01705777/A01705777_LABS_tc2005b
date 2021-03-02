@@ -1,17 +1,10 @@
 const express = require('express');
-
 const router = express.Router();
-
+const fileSystem = require('fs');
 
 //Array of names
 const names = [];
-
-/*
-Modelo de ruta con router
-router.get('/ruta', (request, response, next) => {
-    response.send('Respuesta de la ruta "/modulo/ruta"'); 
-});
-*/
+let names_string = "Personas que entraron a tu pagina web: " + "\n";
 
 //Get y Post con BodyParser
 router.get('/nuevo-nombre', (request, response, next) => {
@@ -19,14 +12,20 @@ router.get('/nuevo-nombre', (request, response, next) => {
 });
 
 router.post('/nuevo-nombre', (request, response, next) => {
-    console.log(request.body);          //Regresa un JSON con la informacion
-    console.log('Nombre directo: ' + request.body.nombre);      //Esto es 1 linea en comparacion coon las muchas otras del Buffer y todo eso en el lab10
-    names.push(request.body.nombre);
+    console.log('Nombre: ' + request.body.nombre);      
+    
+    //Save name in var, array, string and File
+    let nombre = request.body.nombre;
+    names.push(nombre);
+    names_string += nombre + "\n";
+    fileSystem.writeFileSync('nombres.txt', names_string);
+
+    response.status(302);
     response.redirect('/nombres');
 });
 
-router.use('/', (request, response, next) => {
-    let html = '<h3> Personas que han ingresado a tu pagina </h3>';
+router.get('/', (request, response, next) => {
+    let html = '<h2> Personas que han ingresado a tu pagina </h2>';
     html += '<ol>';
     for(nombre of names) {
         html += '<li>' + nombre + '</li>';
@@ -34,6 +33,11 @@ router.use('/', (request, response, next) => {
     html += '</ol>';
 
     response.send(html);
+});
+
+
+router.use( (request, response, next) => {
+    response.status(404).send('<h1>Page Not Found </h1>');
 });
 
 module.exports = router;
