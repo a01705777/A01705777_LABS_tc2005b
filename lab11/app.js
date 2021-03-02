@@ -35,17 +35,18 @@ app.use('/html', (request, response, next) => {
 
 //Get y Post con BodyParser
 app.get('/nuevo-nombre', (request, response, next) => {
-    response.send('<p><h3>Escribe tu nombre: </h3></p> <form action="/nombres" method="POST"> <input type="text" name="nombre"> <input type="submit" value="Enviar"></form>');
+    response.send('<p><h3>Escribe tu nombre: </h3></p> <form action="/nuevo-nombre" method="POST"> <input type="text" name="nombre"> <input type="submit" value="Enviar"></form>');
 });
 
-app.post('/nombres', (request, response, next) => {
+app.post('/nuevo-nombre', (request, response, next) => {
     console.log(request.body);          //Regresa un JSON con la informacion
     console.log('Nombre directo: ' + request.body.nombre);      //Esto es 1 linea en comparacion coon las muchas otras del Buffer y todo eso en el lab10
-    response.send('<h1> Nombres: </h1> ');
+    names.push(request.body.nombre);
+    response.redirect('/nombres');
 });
 
 app.use('/nombres', (request, response, next) => {
-    let html = '<h1> Personas que han ingresado a tu pagina </h1>';
+    let html = '<h3> Personas que han ingresado a tu pagina </h3>';
     html += '<ol>';
     for(nombre of names) {
         html += '<li>' + nombre + '</li>';
