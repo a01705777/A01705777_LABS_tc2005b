@@ -32,6 +32,10 @@ router.get('/', (request, response, next) => {
     } 
     html += '</ol>';
 
+    html += '<div><h2>';
+    html += 'Para ingresar más nombres, agrega la ruta /nuevo-nombre !';
+    html += '</h2></div>';
+
     response.send(html);
 });
 

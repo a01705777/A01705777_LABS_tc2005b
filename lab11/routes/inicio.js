@@ -11,11 +11,15 @@ router.get('/', (request, response, next) => {
     //BODY
     inicio += "<body>"; 
     inicio += "<header><h1>Bienvenidos a mi sitio web </h1>";
-        
+    
     //MAIN
     inicio += "<main>";
     
     //Un poco sobre mi 
+    inicio += '<div><h2>';
+    inicio += 'Intenta buscar las rutas /nombres y /tareas !';
+    inicio += '</h2></div>';
+    
     inicio += "<br>";
     inicio += "<section>";
     inicio += "<header><h2> Un poco sobre mi </h2></header>";

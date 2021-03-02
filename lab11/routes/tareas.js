@@ -110,7 +110,13 @@ router.get('/js', (request, response, next) => {
 
 router.get('/', (reques, response, next) => {
     console.log('Estas en tareas');
-    response.send('<h1> Tareas </h1>');
+    
+    let menu_tareas = '<h1>Tareas</h1>';
+    menu_tareas += '<div><h2>';
+    menu_tareas += 'Intenta buscar las rutas /html, /css y /js !';
+    menu_tareas += '</h2></div>';
+    
+    response.send(menu_tareas);
 });
 
 router.use( (request, response, next) => {
