@@ -17,11 +17,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Acceder a los archivos de la carpeta Public
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Rutas a utilizar
 app.get('/personal', (request, response, next) => {
-    response.sendFile(path.join(__dirname, 'views', 'personal.html'));
+    response.sendFile(path.join(__dirname, 'views', 'inicio.html'));
 })
 
-//Rutas a utilizar
 app.use('/', rutasInicio);
 app.use('/tareas', rutasTareas);
 app.use('/nombres', rutasNombres);
