@@ -1,47 +1,35 @@
-console.log("Ya no tengo que andar reiniciando el servidor gracias a nodemon!!");
+console.log("Bienvenido al Lab 12");
 
 //Basic Express Structure
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
 const path = require('path');
 
-//Routeador para utilizar el modulo de nombres, en la carpeta Routes
+//Routers para acceder a la carpeta de rutas
 const rutasNombres = require('./routes/nombres');
 const rutasTareas = require('./routes/tareas');
+const rutasInicio = require('./routes/inicio'); 
 
 //Middleware
-
-//Utilizar body Parser:
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Acceder a los archivos de la carpeta Public
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Modulos de rutas
-app.use('/tareas', rutasTareas);
-app.use('/nombres', rutasNombres);
-
 app.get('/personal', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'personal.html'));
 })
 
-app.get('/', (request, response, next) => {
-    console.log('Estas en sobre mi');
-    response.send('Sobre mi');
-});
-
-
+//Rutas a utilizar
+app.use('/', rutasInicio);
+app.use('/tareas', rutasTareas);
+app.use('/nombres', rutasNombres);
 app.use( (request, response, next) => {
-    response.statusCode = 404;  //Cambiar valor a variable
-    response.status(404);       //Setter, cambia valor internamente...
-    console.log('Page not found');
-    response.send('Page not found');
-
-    //response.status(404).send('Recurso no encontrado');
+    response.status(404).send('<h1> Page Not Found </h1>');
 });
 
 app.listen(3000);
+
 
 
