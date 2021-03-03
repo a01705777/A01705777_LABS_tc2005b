@@ -6,6 +6,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 
+//EJS 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 //Routers para acceder a la carpeta de rutas
 const rutasNombres = require('./routes/nombres');
 const rutasTareas = require('./routes/tareas');
