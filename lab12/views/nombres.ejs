@@ -1,0 +1,13 @@
+<%- include('partials/head.ejs') %>
+    <main>
+        <h1><%= titulo %></h1>
+        <ul>
+            <% for(let nombre of lista_nombres) { %>
+                <li>
+                    <%= nombre %>
+                </li>
+            <% } %>
+        </ul>
+    </main>
+
+<%- include('partials/footer.ejs') %>
