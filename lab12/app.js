@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Rutas a utilizar
 app.get('/', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'inicio.html'));
-})
+});
 app.use('/tareas', rutasTareas);
 app.use('/nombres', rutasNombres);
 app.use( (request, response, next) => {
