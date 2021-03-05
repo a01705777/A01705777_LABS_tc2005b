@@ -1,0 +1,45 @@
+Nombre: Rafael Hinojosa López
+Matrícula: A01705777
+
+En este laboratorio se reestructuró la manera de crear tablas y se estudió cómo dar de alta "constraints" para los campos de llaves primarias y foráneas de las tablas. 
+
+Además, se estudió la integridad referencial, la cual esta definida como: "La integridad referencial es un sistema de reglas que utilizan la mayoría de las bases de datos relacionales para asegurarse que los registros de tablas relacionadas son válidos y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad."
+(AulaClic, 2021)
+
+Las preguntas encontradas en el laboratorio son: 
+
+1. Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe?
+No se pudo insertar porque la Clave con valor 1000 ya existe.
+
+2.Agrega nuevamente el registro a la tabla de materiales:
+  INSERT INTO Materiales values(1000, 'xxx', 1000)
+  ¿Qué ocurrió?
+Se insertó el registro y después se eliminó. 
+Después de hacer el constraint no se pudo insertar porque violaba el constraint definido para la tabla Materiales. 
+
+La inconsistencia con esta inserción es que Clave = 1000 ya existía y que la Descripción no describe al material como los otros registros. 
+
+La consulta   sp_helpconstraint materiales muestra las restricciones o constraints que tiene la tabla materiales. En este caso, la restricción es que acabamos de definir al campo Clave como llave Primaria, por lo que respetaremos la UNICIDAD de la tabla. 
+
+Las sentencias para definir llaves primarias y las sentencias para definir constraints se encuentran en el archivo crearBd.sql.
+
+Ejercicio 3
+La particularidad que encuentro es que los datos ingresados no corressponden a la Realidad ni siguen el patrón de los otros registros. El RFC no es un RFC y la cantidad de entrega no puede ser 0 (no se puede marcar como entregado algo que nunca se entregó). 
+
+El sistema lo inserta tal como lo pedimos porque aún no existe una restricción para las tablas.
+
+El mensaje indica que se viola la restricción establecida, por lo que no se podrá insertar el registro deseado. 
+
+Las columnas del comando sp_helpconstraint tableName contienen el nombre del constraint, si hay una acción de eliminar, otra de actualizar y otras para corroborar el estado. También se indica qué tipo de llave se tiene e la tabla (Foránea o Primaria). 
+
+-- En GETDATE se puso la fecha y hora del momento en que se ejecuto el query
+-- NO tiene sentido cantidad 0 porque seria hacer una entrega de nada. 
+
+Finalmente, si se desea ingresar una cantidad igual o menor que 0, el sistema notificará al usuario que no es posible por la restricción establecida en donde la cantidad debe ser mayor a 0. 
+
+
+
+Referencias
+Conceptos Integridad referencial. (2021). Aulaclic.es. https://www.aulaclic.es/sql/b_8_1_1.htm
+
+‌

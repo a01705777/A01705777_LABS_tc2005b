@@ -139,7 +139,7 @@ sp_helpconstraint Proyectos
 -- foraneas, de donde se referencian
 
 INSERT INTO Entregan values (1000, 'AAAA800101', 5000, GETDATE(), 0);
---En GETDATE se puso la fecha y hora del momento en que se ejecuto el query
+-- En GETDATE se puso la fecha y hora del momento en que se ejecuto el query
 -- NO tiene sentido cantidad 0 porque seria hacer una entrega de nada. 
 
 DELETE FROM Entregan WHERE Cantidad = 0
