@@ -7,4 +7,5 @@ BULK INSERT a1705777.a1705777.[Entregan]
     FIELDTERMINATOR = ',',
 	ROWTERMINATOR = '\n'
     );
-	SELECT * FROM Entregan
+
+SELECT * FROM Entregan

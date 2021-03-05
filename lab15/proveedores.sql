@@ -7,4 +7,4 @@ BULK INSERT a1705777.a1705777.[Proveedores]
 	ROWTERMINATOR = '\n'
     );
 
-	SELECT * FROM Proveedores
+SELECT * FROM Proveedores

@@ -7,4 +7,4 @@ BULK INSERT a1705777.a1705777.[Proyectos]
 	ROWTERMINATOR = '\n'
     );
 
-	SELECT * FROM Proyectos
+SELECT * FROM Proyectos

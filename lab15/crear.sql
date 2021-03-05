@@ -22,4 +22,4 @@ CREATE TABLE Entregan (
 	Cantidad NUMERIC(8,2)
 );
 
-/* select * from sysobjects where xtype='U' */
+select * from sysobjects where xtype='U'
