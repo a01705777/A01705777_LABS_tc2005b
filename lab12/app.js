@@ -26,8 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'inicio.html'));
 });
-app.use('/tareas', rutasTareas);
 app.use('/nombres', rutasNombres);
+app.use('/tareas', rutasTareas);
 app.use( (request, response, next) => {
     response.status(404).send('<h1> Page Not Found </h1>');
 });
