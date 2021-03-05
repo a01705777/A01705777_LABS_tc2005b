@@ -80,3 +80,70 @@ SELECT * FROM Materiales
 SELECT * FROM Proveedores
 SELECT * FROM Entregan
 SELECT * FROM Proyectos
+
+-- Ejercicio 2
+INSERT INTO Materiales VALUES(1000, 'xxx' 1000)
+ 
+-- No se pudo insertar porque la Clave = 1000 ya existe
+
+DELETE FROM Materiales WHERE Clave = 1000 and Costo = 1000
+
+-- No se elimino nada porque no existia ese registro
+
+-- Hacer Clave PK 
+ALTER TABLE Materiales ADD CONSTRAINT llaveMateriales PRIMARY KEY (Clave)
+
+INSERT INTO Materiales values(1000, 'xxx', 1000)
+
+sp_helpconstraint Materiales
+-- El constraint es la PK llaveMateriales
+
+ALTER TABLE Proyectos ADD CONSTRAINT llaveProyectos PRIMARY KEY (Numero)
+ALTER TABLE Proveedores ADD CONSTRAINT llaveProveedores PRIMARY KEY (RFC)
+ALTER TABLE Entregan ADD CONSTRAINT llavesEntregan PRIMARY KEY (Clave, RFC, Numero)
+
+-- ALTER TABLE Entregan drop constraint llavesEntregan
+
+--Ejercicio 3
+
+INSERT INTO Entregan values (0, 'xxx', 0, '1-jan-02', 0) ;
+
+--Particularidad: Son als que se insertaron pero no siguen el patron de las demas
+--El sistema lo inserta tal como lo pedimos
+
+DELETE FROM Entregan WHERE Clave = 0
+
+ALTER TABLE Entregan add constraint cfentreganclave
+FOREIGN KEY(Clave) REFERENCES Materiales (Clave);
+
+-- INSERT INTO Entregan values (0, 'xxx', 0, '1-jan-02', 0) ;
+-- Ya no se puede insertar por el constraint hecho
+
+ALTER TABLE Entregan add constraint cfentreganrfc
+FOREIGN KEY(RFC) REFERENCES Proveedores (RFC);
+
+ALTER TABLE Entregan add constraint cfentregannumero
+FOREIGN KEY(Numero) REFERENCES Proyectos (Numero);
+
+SELECT * FROM Materiales
+SELECT * FROM Proveedores
+SELECT * FROM Entregan
+SELECT * FROM Proyectos
+
+sp_helpconstraint Materiales
+sp_helpconstraint Proveedores
+sp_helpconstraint Entregan
+sp_helpconstraint Proyectos
+
+-- Las columnas indican las llaves Primarias o Foraneas que la tabla tiene y en caso de ser 
+-- foraneas, de donde se referencian
+
+INSERT INTO Entregan values (1000, 'AAAA800101', 5000, GETDATE(), 0);
+--En GETDATE se puso la fecha y hora del momento en que se ejecuto el query
+-- NO tiene sentido cantidad 0 porque seria hacer una entrega de nada. 
+
+DELETE FROM Entregan WHERE Cantidad = 0
+
+-- Evitar cantidades 0
+ALTER TABLE Entregan add constraint cantidad check (cantidad > 0) ;
+
