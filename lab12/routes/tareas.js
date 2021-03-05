@@ -27,7 +27,11 @@ router.get('/', (reques, response, next) => {
 });
 
 router.use( (request, response, next) => {
-    response.status(404).send('<h1> Page Not Found </h1>');
+    // response.status(404).send('<h1> Page Not Found </h1>');
+    response.status(404);
+    response.render('404', {
+        titulo: '404 - Page Not Found'
+    });
 });
 
 module.exports = router;
