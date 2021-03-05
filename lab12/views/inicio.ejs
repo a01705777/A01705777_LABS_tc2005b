@@ -1,0 +1,122 @@
+<%- include ('partials/head.ejs') %>
+
+<header>
+    <h1>Bienvenidos a mi sitio web</h1>
+    <img src="/Media/header_background.jpg" alt="TitleBackground">
+</header>
+
+<main> 
+    <br><br>            
+    <section>
+        <header>
+            <h2>Un poco sobre mi</h2>
+        </header>
+
+        <p>¡Hola! Soy Rafael Hinojosa López, tengo 19 años y estudio el 4to semestre de Ingeniería en Tecnologías Computacionales.</p>
+        <p> En este sitio te compartiré algunas de mis pasiones y hobbies. Mis datos de contacto los encontrarás 
+            en la última sección de la página. 
+        </p>
+        <img src="/Media/PerfilSolo.jpeg" alt="Tocando el piano">
+        <br><br>
+    </section>
+    <section>
+        <header>
+            <h2>Aficiones</h2>
+        </header>
+        <article>
+            <header>
+                <h3>Deportes</h3>
+            </header>
+            <p>
+                Soy fanático de ver deportes.
+                Me gusta mucho saber cómo se juegan, quiénes son los mejores equipos y estar al tanto de los partidos
+                y eventos deportivos. 
+            </p>
+            <p>La siguiente tabla contiene mis deportes, equipos y jugadores favoritos.</p>
+
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Deporte</th>
+                        <th>Equipo favorito</th>
+                        <th>Jugador favorito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="table_content">
+                        <td>Béisbol</td>
+                        <td>New York Yankees</td>
+                        <td>Alex Rodríguez</td>
+                    </tr>
+                    <tr>
+                        <td>Fútbol Americano</td>
+                        <td>Kansas City Chiefs</td>
+                        <td>Tom Brady</td>
+                    </tr>
+                    <tr>
+                        <td>Fútbol Soccer</td>
+                        <td>Tiburones Rojos de Veracruz</td>
+                        <td>Lionel Messi</td>
+                    </tr>
+                    <tr>
+                        <td>Golf</td>
+                        <td>Deporte Individual</td>
+                        <td>Tiger Woods</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            
+            <p>¿A quién prefieres?</p>
+            <form>
+                <input type="button" value="Messi">
+                <input id="disabled" type="button" value="Ronaldo">
+            </form>
+            <br><br>
+        </article>
+
+        <article>
+            <header>
+                <h3>Música</h3>
+            </header>
+            
+            <p>Me gusta mucho la música. Tanto tocarla como disfrutarla y analizarla.</p>
+            <p>Mis canciones favoritas son: </p>
+            <ol>
+                <li>Playtime - Yanni</li>
+                <li>Tus Alas - Kim Richards</li>
+                <li>Cara a cara - Majo y Dan, Marcos Vidal</li>
+            </ol>
+            
+            <p>¿Con cuál <strong>color</strong> indentificarías a la música?</p>
+            <form>
+                <label> La música es color...
+                    <input type="color"/>
+                </label>
+            </form> 
+            
+            <br><br>
+        </article>
+
+        <article>
+            <header>
+                <h3>Hobbies/Pasatiempos</h3>
+            </header>
+            
+            <p>En general me gusta leer, conocer nuevas culturas, jugar ajedrez, ver series, películas y deportes.</p>
+
+            <br><br>
+        </article>
+    </section>
+    <section>
+        <header>
+            <h2>Datos de Contacto</h2>
+        </header>
+        <div>Nombre: Rafael Hinojosa López</div>
+        <div>Matrícula: A01705777</div>
+        <div>Correo: a01705777@itesm.mx</div>
+        <div>Instagram: <a href="https://www.instagram.com/rafahinojosa.embajadorestec/"> @rafahinojosa.embajadorestec</a></div>
+    </section>
+</main>
+
+<%- include ('partials/footer.ejs') %>

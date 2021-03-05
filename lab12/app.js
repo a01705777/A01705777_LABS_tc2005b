@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 //Routers para acceder a la carpeta de rutas
+const rutasInicio = require('./routes/inicio');
 const rutasNombres = require('./routes/nombres');
 const rutasTareas = require('./routes/tareas');
 
@@ -23,9 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Rutas a utilizar
-app.get('/', (request, response, next) => {
-    response.sendFile(path.join(__dirname, 'views', 'inicio.html'));
-});
+app.use('/', rutasInicio);
 app.use('/nombres', rutasNombres);
 app.use('/tareas', rutasTareas);
 app.use( (request, response, next) => {
