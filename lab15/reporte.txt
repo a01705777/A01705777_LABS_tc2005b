@@ -1,0 +1,13 @@
+Nombre: Rafael Hinojosa López
+Matrícula: A01705777
+
+sp_help materiales muestra los detallos de los campos o columnas de la tabla materiales. Muestra a detalle el tipo de dato de cada campo. 
+
+Al ejecutar el archivo crear.sql se crearon las tablas Materiales, Proyectos, Proveedores y Entregan en la Base de Datos. 
+La utilidad es que es poco complejo y muy sencillo hacerlo, pero tiene varias fallas y áreas de oportunidad que se verán en el siguiente laboratorio.
+
+La relación entre los archivos .csv y la base de datos es que cada archivo contiene registros potenciales de las tablas que se encuentran en la base de datos. 
+
+La relación entre materiales.sql y el archivo materiales.csv es que el archivo .sql crea la tabla donde se guardarán los datos separados por comas en el arhcivo .csv. Cada columna o campo de la tabla Materiales corresponde a un dato del .csv en e mismo orden de creación en el .sql y aparación en el .csv.
+
+Lo que sucedió al hacer SELECT * FROM Materiales es que el sistema me muestra los datos cargados en la tabla Materiales. 

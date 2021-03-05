@@ -23,3 +23,5 @@ CREATE TABLE Entregan (
 );
 
 select * from sysobjects where xtype='U'
+
+-- sp_help Materiales
