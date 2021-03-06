@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (request, response, next) => {
-    response.render('inicio', {
-        titulo: 'Rafa Hinojosa'
-    });
-});
+const inicioController = require('../controllers/inicio_controller');
+
+router.get('/', inicioController.get);
 
 module.exports = router;
