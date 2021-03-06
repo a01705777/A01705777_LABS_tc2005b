@@ -1,37 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
-//Array of names
+// Controlador
+const nombresController = require('../controllers/nombres_controller');
+
 const names = ['Rafa', 'Fio'];
 
-//Get y Post con BodyParser
-router.get('/nuevo-nombre', (request, response, next) => {
-    response.render('nuevo-nombre', {
-        titulo: 'Nuevo Nombre'
-    });
-});
+router.get('/nuevo-nombre', nombresController.getNuevoNombre);
 
-router.post('/nuevo-nombre', (request, response, next) => {
-    //Aqui recibo lo que envio por post
-    console.log(request.body.nuevo_nombre);      
-    names.push(request.body.nuevo_nombre);
+router.post('/nuevo-nombre', nombresController.postNuevoNombre);
 
-    response.status(302);
-    response.redirect('/nombres');
-});
+router.get('/', nombresController.get);
 
-router.get('/', (request, response, next) => {
-    response.render('nombres', {
-        titulo:'Nombres', 
-        lista_nombres: names
-    })
-});
-
-router.use( (request, response, next) => {
-    response.status(404);
-    response.render('404', {
-        titulo: '404 - Page Not Found'
-    });
-});
+router.use('/', nombresController.use);
 
 module.exports = router;
