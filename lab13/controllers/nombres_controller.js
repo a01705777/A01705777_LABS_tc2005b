@@ -1,4 +1,4 @@
-const names = ['Rafa', 'Fio'];
+const Nombre = require('../models/nombres_model');
 
 // Get Nuevo Nombre
 exports.getNuevoNombre = (request, response, next) => {
@@ -11,7 +11,8 @@ exports.getNuevoNombre = (request, response, next) => {
 exports.postNuevoNombre = (request, response, next) => {
       //Aqui recibo lo que envio por post
       console.log(request.body.nuevo_nombre);      
-      names.push(request.body.nuevo_nombre);
+      const new_name = new Nombre (request.body.nuevo_nombre);
+      new_name.save();
   
       response.status(302);
       response.redirect('/nombres');
@@ -19,9 +20,10 @@ exports.postNuevoNombre = (request, response, next) => {
 
 // Lista de nombres
 exports.get = (request, response, next) => {
+    const names = Nombre.fetchAll();
     response.render('nombres', {
         titulo:'Nombres', 
-        lista_nombres: names
+        lista_nombres: names    // Tomamos los datos del modelo
     });
 };
 
