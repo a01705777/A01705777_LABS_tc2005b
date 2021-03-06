@@ -1,0 +1,34 @@
+{
+  "name": "lab13",
+  "version": "1.0.0",
+  "description": "Lab 13. Updated version of Lab 12 with MVC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a01705777/A01705777_LABS_tc2005b.git"
+  },
+  "keywords": [
+    "MVC",
+    "JavaScript",
+    "Web",
+    "Development"
+  ],
+  "author": "Rafael Hinojosa López",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a01705777/A01705777_LABS_tc2005b/issues"
+  },
+  "homepage": "https://github.com/a01705777/A01705777_LABS_tc2005b#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
