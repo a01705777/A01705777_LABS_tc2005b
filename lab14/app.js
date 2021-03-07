@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 
+var cookieParser = require('cookie-parser');
+
 //EJS 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -19,6 +21,7 @@ const rutasTareas = require('./routes/tareas');
 
 //BodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 //Acceder a los archivos de la carpeta Public
 app.use(express.static(path.join(__dirname, 'public')));

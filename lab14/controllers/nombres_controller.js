@@ -15,7 +15,7 @@ exports.postNuevoNombre = (request, response, next) => {
     new_name.save();
 
     // Hacemos una cookie
-    response.setHeader('Set-Cookie', ['ultimo_usuario=' + new_name.nombre]);
+    response.setHeader('Set-Cookie', ['ultimo_usuario =' + new_name.nombre + '; HttpOnly']);
     
     response.status(302);
     response.redirect('/nombres');
@@ -26,8 +26,10 @@ exports.get = (request, response, next) => {
     const names = Nombre.fetchAll();
     
     // Imprimir valor de cookie
-    console.log('Cookie: ' + request.get('Cookie'));
-    request.get('Cookie').split(';')[1].trim().split('=')[1];
+    // console.log('Cookie: ' + request.get('Cookie'));
+    // request.get('Cookie').split(';')[1].trim().split('=')[1];
+    console.log(request.cookises);
+    console.log(request.cookies.ultimo_usuario);
 
     response.render('nombres', {
         titulo:'Nombres', 
