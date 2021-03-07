@@ -1,0 +1,94 @@
+<%- include('partials/head_js.ejs') %>
+
+<header>
+    <h1> Datos Interesantes de JavaScript </h1>
+    <img src="/Media/JS.png" alt="JS logo">
+</header>
+
+<main>
+    <br><br>
+    <section>
+        <header>
+            <h2> Preguntas y Respuestas </h2>
+        </header>
+        
+        <p><strong>1. ¿Qué diferencias y semejanzas hay entre Java y JavaScript?  </strong></p>
+        <p>
+            Diferencias: 
+        </p>
+        <ul class="circle_list">
+            <li>Java trabaja orientado a objetos, es multiplataforma y JavaScript se utiliza para la interacción de sitios web. </li>
+            <li>Java es un lenguaje de tipos rigurosos (strongly typed language), mientras que JavaScript es un lenguaje de tipos permisivos. </li>
+            <li>Java es un lenguaje compilado y JavaScript uno interpretado.</li>
+        </ul>      
+        <p>
+            Semejanzas: 
+        </p>
+        <ul class="circle_list">
+            <li>Ambos utilizan “;” para terminar declaraciones.</li>
+            <li>Utilizan una sintaxis similar para condicionales y ciclos (if, for, while). </li>
+            <li>Retornan valores con “return”.</li>
+        </ul> 
+        
+        <hr>
+
+        <p><strong>2. ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </strong></p>
+        <ul = class="circle_list">
+            <li><strong>getDate(): </strong> retorna los días del mes [1,…, 31] </li>                        
+            <li><strong>getDay(): </strong> retorna los días de la semana [0, …, 6] </li>
+            <li><strong>getFullYear() </strong> retorna el año.  </li>
+            <li><strong>getHours(): </strong> retorna la hora [0, …, 23] </li>
+            <li><strong>getMilliseconds(): </strong> retorna los milisegundos [0, …, 999] </li>                        
+            <li><strong>getMinutes(): </strong> retorna los minutos [0, …, 59] </li>   
+        </ul> 
+
+        <hr>
+
+        <p><strong>3. ¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</strong></p>
+        <ul = class=circle_list">
+            <li><strong>toString(): </strong> convierte un arreglo en un string con los elementos separados por comas.  </li>
+            <li><strong>pop(): </strong> elimina el último elemento del arreglo. </li>
+            <li><strong>push(): </strong> agrega un elemento al final del arreglo. </li>
+            <li><strong>concat(): </strong> retorna un nuevo arreglo hecho por la concatenación de otros arreglos. </li>
+            <li><strong>splice(): </strong>  se utiliza para insertar elementos en una posición del array y eliminar un cierto número de elementos a partir de esa posición. </li>
+        </ul> 
+        
+        <hr>
+
+        <p><strong>4. ¿Cómo se declara una variable con alcance local dentro de una función? </strong></p>
+        <p> Con la palabra reservada let. Por ejemplo: let x = 10; </p>
+        
+        <hr>
+
+        <p><strong>5.	¿Qué implicaciones tiene utilizar variables globales dentro de funciones? </strong></p>
+        <p>
+            Una de las implicaciones más grandes es que corres el riesgo de no poder medir los cambios que produzca una variable global
+            en otras funciones o partes del código. Además, el código sería menos legible pues tendrías que recordar el origen y propósito de las variables globales,
+            en vez de tenerla declarada dentro de la función como variable local.
+        </p>
+        <br>
+    </section>
+    <section>
+        <header>
+            <h2>Referencias</h2>
+        </header>
+
+        <p>JavaScript Array Methods. (2015). W3schools.com. https://www.w3schools.com/js/js_array_methods.asp</p>
+        <p>JavaScript Date Reference. (2021). W3schools.com. https://www.w3schools.com/jsref/jsref_obj_date.asp</p>
+        <p>Richardson, A. (2018). Some Similarities Between Java And JavaScript. Eviltester.com. https://www.eviltester.com/2018/05/some-similarities-between-java-and-javascript.html</p>
+        <p>Rungta, K. (2020). Java vs JavaScript: Most Important Differences You Must Know. Guru99.com; Guru99. https://www.guru99.com/difference-between-java-and-javascript.html</p>
+        <br><br>
+    </section>
+    <section>
+        <header>
+            <h2>Datos de Contacto</h2>
+        </header>
+        <div>Nombre: Rafael Hinojosa López</div>
+        <div>Matrícula: A01705777</div>
+        <div>Correo: a01705777@itesm.mx</div>
+        <div id="last_div">Instagram: <a href="https://www.instagram.com/rafahinojosa.embajadorestec/"> @rafahinojosa.embajadorestec</a></div>
+    </section>
+    <br><br>
+</main>
+
+<% include('partials/footer.ejs') %>

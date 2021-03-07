@@ -1,0 +1,13 @@
+<%- include('partials/head.ejs') %>
+    <main>
+        <h1><%= titulo %></h1>
+        <div>
+            Escribe tu nombre: 
+            <form action="nuevo-nombre" method="POST"> 
+                <input type="text" name="nuevo_nombre"> 
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </main>
+
+<%- include('partials/footer.ejs') %>
