@@ -16,6 +16,7 @@ app.set('views', 'views');
 const rutasInicio = require('./routes/inicio');
 const rutasNombres = require('./routes/nombres');
 const rutasTareas = require('./routes/tareas');
+const rutasUsers = require('./routes/users');
 
 //Middleware
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Rutas a utilizar
 app.use('/', rutasInicio);
+app.use('/usuarios', rutasUsers);
 app.use('/nombres', rutasNombres);
 app.use('/tareas', rutasTareas);
 app.use( (request, response, next) => {
