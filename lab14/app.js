@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 
 var cookieParser = require('cookie-parser');
 
@@ -20,9 +21,18 @@ const rutasUsers = require('./routes/users');
 
 //Middleware
 
-//BodyParser
+//BodyParser para acceder facilmente a datos de las formas 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+//Para acceder a los valores de las cookies
 app.use(cookieParser());
+
+//Para trabajar con sesiones
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
 
 //Acceder a los archivos de la carpeta Public
 app.use(express.static(path.join(__dirname, 'public')));

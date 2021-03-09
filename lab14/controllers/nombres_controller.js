@@ -4,6 +4,7 @@ const Nombre = require('../models/nombres_model');
 exports.getNuevoNombre = (request, response, next) => {
     response.render('nuevo-nombre', {
         titulo: 'Nuevo Nombre'
+        //isLoggedIn: if(request.session.isLoggedIn === true) ? true : false
     });
 };
 
@@ -34,6 +35,7 @@ exports.get = (request, response, next) => {
     response.render('nombres', {
         titulo:'Nombres', 
         lista_nombres: names    // Tomamos los datos del modelo
+        //isLoggedIn: if(request.session.isLoggedIn === true) ? true : false
     });
 };
 
