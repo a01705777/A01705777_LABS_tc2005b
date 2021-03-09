@@ -1,7 +1,7 @@
 exports.getlogin = (request, response, next) => {
     response.render('login', {
         titulo: 'Inicio de Sesión'
-        //isLoggedIn: if(request.session.isLoggedIn === true) ? true : false
+        //PONER EN TODOS LOS RENDERS isLoggedIn: if(request.session.isLoggedIn === true) ? true : false
     });
 };
 
