@@ -1,0 +1,39 @@
+{
+  "name": "lab17",
+  "version": "1.0.0",
+  "description": "Laboratorio 17: Conexión a la Base de Datos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a01705777/A01705777_LABS_tc2005b.git"
+  },
+  "keywords": [
+    "Database",
+    "MySQL",
+    "HTML",
+    "CSS",
+    "JS",
+    "Cookies",
+    "MVC"
+  ],
+  "author": "Rafael Hinojosa López",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a01705777/A01705777_LABS_tc2005b/issues"
+  },
+  "homepage": "https://github.com/a01705777/A01705777_LABS_tc2005b#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1"
+  }
+}
