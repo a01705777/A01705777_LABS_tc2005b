@@ -12,8 +12,10 @@ exports.postlogin = (request, response, next) => {
     response.redirect('/');
 };
 
-exports.logout = (request, response, next) => {
-    request.session.destroy(() => {
+exports.getlogout = (request, response, next) => {
+    request.session.destroy((err) => {
+        console.log(err);
+        console.log('Logout');
         response.redirect('/');
     });
 };
