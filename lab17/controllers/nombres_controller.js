@@ -26,15 +26,9 @@ exports.postNuevoNombre = (request, response, next) => {
 exports.get = (request, response, next) => {
     Nombre.fetchAll()
         .then(([rows, fieldData]) => {
-            const nombres = [];
-            for(let row of rows) {
-                nombres.push({nombre: row.nombre,
-                            imagen: row.imagen});
-                console.log(nombres);
-            }
             response.render('nombres', {
                 titulo:'Nombres', 
-                lista_nombres: nombres,    // Tomamos los datos del modelo
+                lista_nombres: rows,    // Tomamos los datos del modelo
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
         })

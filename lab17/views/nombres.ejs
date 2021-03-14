@@ -7,7 +7,7 @@
             <% for(let nombre of lista_nombres) { %>
                 <li>
                     <%= nombre.nombre %>
-                    <%= nombre.imagen %> 
+                    <img src="<%= nombre.imagen %>" alt="Foto de <%= nombre.nombre %>"> 
                 </li>
             <% } %>
         </ul>
