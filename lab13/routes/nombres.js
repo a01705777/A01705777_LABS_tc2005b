@@ -10,6 +10,8 @@ router.post('/nuevo-nombre', nombresController.postNuevoNombre);
 
 router.get('/', nombresController.get);
 
+router.post('/', nombresController.postDeleteNombre);
+
 router.use('/', nombresController.use);
 
 module.exports = router;

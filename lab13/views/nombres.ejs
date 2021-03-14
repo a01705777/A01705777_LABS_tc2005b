@@ -4,10 +4,16 @@
         <ul>
             <% for(let nombre of lista_nombres) { %>
                 <li>
-                    <%= nombre %>
+                    <%= nombre.nombre %>,  
+                    <%= nombre.edad %> años
+                    <!-- <img src="<%= nombre.imagen %>" alt="Foto de <%= nombre.nombre %>"> -->
                 </li>
             <% } %>
         </ul>
+        <form action="nombres" method="POST">
+            <label>Presiona el siguiente botón para eliminar el último nombre agregado</label>
+            <input type="submit" value="Eliminar">
+        </form>
     </main>
 
 <%- include('partials/footer.ejs') %>
