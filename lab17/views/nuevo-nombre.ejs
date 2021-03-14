@@ -4,12 +4,14 @@
     <main>
         <h1><%= titulo %></h1>
         <div>
-            Escribe tu nombre: 
             <form action="nuevo-nombre" method="POST"> 
-                <input type="text" name="nuevo_nombre"> 
+                <label> Nombre: </label><input type="text" name="nuevo_nombre"> 
+                <label> Correo: </label><input type="text" name="nuevo_correo">
+                <label> Contraseña: </label><input type="password" name="nueva_contraseña">
+                <label> Foto de Perfil (Dirección de imagen): </label><input type="text" name="nueva_imagen">
                 <input type="submit" value="Enviar">
             </form>
-        </div>
+        </div> 
     </main>
 
 <%- include('partials/footer.ejs') %>

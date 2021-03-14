@@ -3,15 +3,15 @@ const Nombre = require('../models/nombres_model');
 // Get Nuevo Nombre
 exports.getNuevoNombre = (request, response, next) => {
     response.render('nuevo-nombre', {
-        titulo: 'Nuevo Nombre',
+        titulo: 'Registra tus datos',
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
-// Post Nuevo Nombre
+// Post Nuevo Nombre (Recibo lo enviado)
 exports.postNuevoNombre = (request, response, next) => {
-    //Aqui recibo lo que envio por post
-    console.log(request.body.nuevo_nombre);      
+    // nombre: request.body.nuevo_nombre, correo: request.body.nuevo_correo, contrasena: request.body.nueva_contraseña, imagen: request.body.nueva_imagen
+    
     const new_name = new Nombre (request.body.nuevo_nombre);
     new_name.save();
 

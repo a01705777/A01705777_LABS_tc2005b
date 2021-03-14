@@ -1,6 +1,3 @@
-// const names = ['Rafa', 'Fio'];     
-// const names = [{nombre: "Rafa", imagen:"...", correo:"..."}, {nombre: "Fio", imagen:"...", correo:"fio..."}];    
-
 const db = require('../util/database');
 
 module.exports = class Nombre {
