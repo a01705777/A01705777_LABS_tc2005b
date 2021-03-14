@@ -2,9 +2,12 @@
     <main>
         <h1><%= titulo %></h1>
         <div>
-            Escribe tu nombre: 
             <form action="nuevo-nombre" method="POST"> 
+                <label>Escribe tu nombre</label>
                 <input type="text" name="nuevo_nombre"> 
+
+                <label>Escribe tu edad</label>
+                <input type="text" name="edad"> 
                 <input type="submit" value="Enviar">
             </form>
         </div>

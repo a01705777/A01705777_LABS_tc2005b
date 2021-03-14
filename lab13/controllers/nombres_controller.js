@@ -10,8 +10,8 @@ exports.getNuevoNombre = (request, response, next) => {
 // Post Nuevo Nombre
 exports.postNuevoNombre = (request, response, next) => {
       //Aqui recibo lo que envio por post
-      console.log(request.body.nuevo_nombre);      
-      const new_name = new Nombre (request.body.nuevo_nombre);
+    //   console.log(request.body.edad);      
+      const new_name = new Nombre (request.body.nuevo_nombre, request.body.edad, '');
       new_name.save();
   
       response.status(302);
