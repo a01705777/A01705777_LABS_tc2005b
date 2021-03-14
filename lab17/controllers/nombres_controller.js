@@ -24,19 +24,23 @@ exports.postNuevoNombre = (request, response, next) => {
 
 // Lista de nombres
 exports.get = (request, response, next) => {
-    const names = Nombre.fetchAll();
-    
-    // Imprimir valor de cookie
-    // console.log('Cookie: ' + request.get('Cookie'));
-    // request.get('Cookie').split(';')[1].trim().split('=')[1];
-    console.log(request.cookies);
-    console.log(request.cookies.ultimo_usuario);
-
-    response.render('nombres', {
-        titulo:'Nombres', 
-        lista_nombres: names,    // Tomamos los datos del modelo
-        isLoggedIn: request.session.isLoggedIn === true ? true : false
-    });
+    Nombre.fetchAll()
+        .then(([rows, fieldData]) => {
+            const nombres = [];
+            for(let row of rows) {
+                nombres.push({nombre: row.nombre,
+                            imagen: row.imagen});
+                console.log(nombres);
+            }
+            response.render('nombres', {
+                titulo:'Nombres', 
+                lista_nombres: nombres,    // Tomamos los datos del modelo
+                isLoggedIn: request.session.isLoggedIn === true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 // 404 Page Not Found

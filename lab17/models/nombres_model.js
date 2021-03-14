@@ -19,15 +19,7 @@ module.exports = class Nombre {
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        db.execute('SELECT * FROM usuario')
-            .then(([rows, fieldData]) => {
-                console.log(rows);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-
-        // return names;
+        return db.execute('SELECT * FROM usuario');
     }
 
 }
