@@ -3,14 +3,22 @@
 
     <main>
         <h1><%= titulo %></h1>
-        <ul>
+        <div class="row">
             <% for(let nombre of lista_nombres) { %>
-                <li>
-                    <%= nombre.nombre %>
-                    <img src="<%= nombre.imagen %>" alt="Foto de <%= nombre.nombre %>"> 
-                </li>
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image">
+                  <img src="<%= nombre.imagen %>" alt="Foto de <%= nombre.nombre %>">
+                  <span class="card-title"><%= nombre.nombre %></span>
+                </div>
+                <div class="card-content">
+                  <p>Hola! Mi correo es: <a href = 'mailto: <%= nombre.correo %>'><%= nombre.correo %></a> </p>
+                </div>
+              </div>
+            </div>
             <% } %>
-        </ul>
+          </div>
     </main>
+
 
 <%- include('partials/footer.ejs') %>
