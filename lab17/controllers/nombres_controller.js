@@ -27,6 +27,23 @@ exports.postNuevoNombre = (request, response, next) => {
         });
 };
 
+// Un solo nombre
+exports.getNombre = (request, response, next) => {
+    const id = request.params.nombre_id;
+    Nombre.fetchOne(id)
+        .then(([rows, fieldData]) => {
+            console.log(rows[0].nombre);
+            response.render('nombres', {
+                titulo: rows[0].nombre, 
+                lista_nombres: rows,    // Tomamos los datos del modelo
+                isLoggedIn: request.session.isLoggedIn === true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
 // Lista de nombres
 exports.get = (request, response, next) => {
     Nombre.fetchAll()

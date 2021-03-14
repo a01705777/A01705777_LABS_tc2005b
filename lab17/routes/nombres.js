@@ -8,6 +8,8 @@ router.get('/nuevo-nombre', nombresController.getNuevoNombre);
 
 router.post('/nuevo-nombre', nombresController.postNuevoNombre);
 
+router.get('/:nombre_id', nombresController.getNombre);
+
 router.get('/', nombresController.get);
 
 router.use('/', nombresController.use);
