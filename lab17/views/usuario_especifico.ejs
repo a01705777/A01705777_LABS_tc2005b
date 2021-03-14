@@ -1,0 +1,28 @@
+<%- include('partials/head.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <main>
+        <h1><%= titulo %></h1>
+        <div class="row">
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image">
+                  <img src="<%= usuario.imagen %>" alt="Foto de <%= usuario.nombre %>">
+                  <span class="card-title"><%= usuario.nombre %></span>
+                </div>
+                <div class="card-content">
+                  <p>Hola! Mi correo es: <a href = 'mailto: <%= usuario.correo %>'><%= usuario.correo %></a> </p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <form action="<%= usuario.usuario_id %>" method="POST">
+            <label>Cambia la foto de perfil: </label>
+            <input type="text" name="nueva_imagen"> 
+            <input type="submit" value="Cambiar">  
+        </form>
+    </main>
+
+
+<%- include('partials/footer.ejs') %>

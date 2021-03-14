@@ -8,7 +8,9 @@ router.get('/nuevo-nombre', nombresController.getNuevoNombre);
 
 router.post('/nuevo-nombre', nombresController.postNuevoNombre);
 
-router.get('/:nombre_id', nombresController.getNombre);
+router.get('/:usuario_id', nombresController.getUsuarioEspecifico);
+
+router.post('/:usuario_id', nombresController.postUsuarioEspecifico);   // Cambio de imagen
 
 router.get('/', nombresController.get);
 

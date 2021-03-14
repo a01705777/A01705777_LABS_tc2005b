@@ -27,17 +27,33 @@ exports.postNuevoNombre = (request, response, next) => {
         });
 };
 
-// Un solo nombre
-exports.getNombre = (request, response, next) => {
-    const id = request.params.nombre_id;
+// Muestra un usuario segun el id en la ruta
+exports.getUsuarioEspecifico = (request, response, next) => {
+    const id = request.params.usuario_id;
     Nombre.fetchOne(id)
+        // en rows se guarda la tupla de la consulta hecha en fetchOne
         .then(([rows, fieldData]) => {
-            console.log(rows[0].nombre);
-            response.render('nombres', {
+            // console.log(rows[0].contraseña);
+            response.render('usuario_especifico', {
                 titulo: rows[0].nombre, 
-                lista_nombres: rows,    // Tomamos los datos del modelo
+                usuario: rows[0],    // Mando solo un usuario 
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+// Cambia la imagen del usuario 
+exports.postUsuarioEspecifico = (request, response, next) => {
+    const id = request.params.usuario_id;       // id que aparece en la ruta
+    const img = request.body.nueva_imagen;
+    
+    Nombre.changeImage(id, img)
+        .then(() => {
+            response.status(302);
+            response.redirect('/nombres');
         })
         .catch(err => {
             console.log(err);

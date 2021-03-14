@@ -26,4 +26,7 @@ module.exports = class Nombre {
         return db.execute('SELECT * FROM usuario WHERE usuario_id=?', [id]);
     }
 
+    static changeImage(id, imagen) {
+        return db.execute('UPDATE usuario SET imagen=? where usuario_id=?', [imagen, id]);
+    }
 }
