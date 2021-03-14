@@ -1,25 +1,29 @@
 exports.getHTML = (request, response, next) => {
     response.render('html', {
-        titulo: 'HTML'
+        titulo: 'HTML',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
 exports.getCSS = (request, response, next) => {
     response.render('css', {
-        titulo: 'CSS'
+        titulo: 'CSS',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
 exports.getJS = (request, response, next) => {
     response.render('js', {
-        titulo: 'JavaScript'
+        titulo: 'JavaScript',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
 exports.get = (request, response, next) => {
     console.log('Estas en tareas');
     response.render('tareas', {
-        titulo: 'Tareas'
+        titulo: 'Tareas',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 

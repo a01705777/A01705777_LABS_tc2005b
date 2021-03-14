@@ -3,8 +3,8 @@ const Nombre = require('../models/nombres_model');
 // Get Nuevo Nombre
 exports.getNuevoNombre = (request, response, next) => {
     response.render('nuevo-nombre', {
-        titulo: 'Nuevo Nombre'
-        //isLoggedIn: if(request.session.isLoggedIn === true) ? true : false
+        titulo: 'Nuevo Nombre',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
@@ -29,13 +29,13 @@ exports.get = (request, response, next) => {
     // Imprimir valor de cookie
     // console.log('Cookie: ' + request.get('Cookie'));
     // request.get('Cookie').split(';')[1].trim().split('=')[1];
-    console.log(request.cookises);
+    console.log(request.cookies);
     console.log(request.cookies.ultimo_usuario);
 
     response.render('nombres', {
         titulo:'Nombres', 
-        lista_nombres: names    // Tomamos los datos del modelo
-        //isLoggedIn: if(request.session.isLoggedIn === true) ? true : false
+        lista_nombres: names,    // Tomamos los datos del modelo
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
