@@ -11,15 +11,20 @@ exports.getNuevoNombre = (request, response, next) => {
 // Post Nuevo Nombre (Recibo lo enviado)
 exports.postNuevoNombre = (request, response, next) => {
     // nombre: request.body.nuevo_nombre, correo: request.body.nuevo_correo, contrasena: request.body.nueva_contraseña, imagen: request.body.nueva_imagen
-    
-    const new_name = new Nombre (request.body.nuevo_nombre);
-    new_name.save();
-
-    // Hacemos una cookie
-    response.setHeader('Set-Cookie', ['ultimo_usuario =' + new_name.nombre + '; HttpOnly']);
-    
-    response.status(302);
-    response.redirect('/nombres');
+    const new_name = new Nombre(request.body.nuevo_correo, 
+                                request.body.nuevo_nombre, 
+                                request.body.nueva_contraseña, 
+                                request.body.nueva_imagen);
+    new_name.save()
+        .then(() => {
+            // Hacemos una cookie
+            response.setHeader('Set-Cookie', ['ultimo_usuario =' + new_name.nombre + '; HttpOnly']);
+            response.status(302);
+            response.redirect('/nombres');
+        })
+        .catch(err => {
+            console.log(err)
+        });
 };
 
 // Lista de nombres
