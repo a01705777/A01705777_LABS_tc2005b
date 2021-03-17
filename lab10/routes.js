@@ -146,6 +146,15 @@ const requestHandler = (request, response) => {
         response.write('<input type="text" name="nombre">');            //Metemos texto pero usamos atr name para que el servidor lo reconozca
         response.write('<input type="submit" value="Enviar"></form>');  //Submit porque lo enviaremos 
 
+        response.write("<p><h3>Vamos a tareas : </h3></p>");
+        response.write("<button> <a href='/html_theory'> HTML </a> </button> ");
+
+        response.write("<p><h3>Vamos a tareas : </h3></p>");
+        response.write("<button> <a href='/css_theory'> CSS </a> </button> ");
+
+        response.write("<p><h3>Vamos a tareas : </h3></p>");
+        response.write("<button> <a href='/js_theory'> JS </a> </button> ");
+
         //Un poco sobre mi 
         response.write("<br>");
         response.write("<section>")
