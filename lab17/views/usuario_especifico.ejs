@@ -11,13 +11,13 @@
                   <span class="card-title"><%= usuario.nombre %></span>
                 </div>
                 <div class="card-content">
-                  <p>Hola! Mi correo es: <a href = 'mailto: <%= usuario.correo %>'><%= usuario.correo %></a> </p>
+                  <p>Hola! Mi correo es: <a href = 'mailto: <%= usuario.email %>'><%= usuario.email %></a> </p>
                 </div>
               </div>
             </div>
         </div>
 
-        <form action="<%= usuario.usuario_id %>" method="POST">
+        <form action="<%= usuario.id_usuario %>" method="POST">
             <label>Cambia la foto de perfil: </label>
             <input type="text" name="nueva_imagen"> 
             <input type="submit" value="Cambiar">  

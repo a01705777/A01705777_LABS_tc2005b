@@ -12,8 +12,9 @@ exports.getNuevoNombre = (request, response, next) => {
 exports.postNuevoNombre = (request, response, next) => {
     // nombre: request.body.nuevo_nombre, correo: request.body.nuevo_correo, contrasena: request.body.nueva_contraseña, imagen: request.body.nueva_imagen
     const new_name = new Nombre(request.body.nuevo_correo, 
-                                request.body.nuevo_nombre, 
                                 request.body.nueva_contraseña, 
+                                request.body.nuevo_nombre,
+                                request.body.nueva_edad,
                                 request.body.nueva_imagen);
     new_name.save()
         .then(() => {
@@ -29,11 +30,10 @@ exports.postNuevoNombre = (request, response, next) => {
 
 // Muestra un usuario segun el id en la ruta
 exports.getUsuarioEspecifico = (request, response, next) => {
-    const id = request.params.usuario_id;
+    const id = request.params.id_usuario;
     Nombre.fetchOne(id)
         // en rows se guarda la tupla de la consulta hecha en fetchOne
         .then(([rows, fieldData]) => {
-            // console.log(rows[0].contraseña);
             response.render('usuario_especifico', {
                 titulo: rows[0].nombre, 
                 usuario: rows[0],    // Mando solo un usuario 
@@ -47,7 +47,7 @@ exports.getUsuarioEspecifico = (request, response, next) => {
 
 // Cambia la imagen del usuario 
 exports.postUsuarioEspecifico = (request, response, next) => {
-    const id = request.params.usuario_id;       // id que aparece en la ruta
+    const id = request.params.id_usuario;       // id que aparece en la ruta
     const img = request.body.nueva_imagen;
     
     Nombre.changeImage(id, img)
