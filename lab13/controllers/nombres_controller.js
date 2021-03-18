@@ -27,11 +27,12 @@ exports.get = (request, response, next) => {
     });
 };
 
-exports.postDeleteNombre = (request, response, next) => {
-    Nombre.deleteLast();
+exports.getDeleteOne = (request, response, next) => {
+    console.log(request.params.id);
+    Nombre.deleteOne(request.params.id);
     response.status(302);
     response.redirect('/nombres');
-};
+}
 
 // 404 Page Not Found
 exports.use = (request, response, next) => {

@@ -8,6 +8,8 @@ router.get('/nuevo-nombre', nombresController.getNuevoNombre);
 
 router.post('/nuevo-nombre', nombresController.postNuevoNombre);
 
+router.get('/eliminar/id/:id', nombresController.getDeleteOne);
+
 router.get('/', nombresController.get);
 
 router.post('/', nombresController.postDeleteNombre);

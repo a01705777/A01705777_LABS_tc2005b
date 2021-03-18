@@ -7,13 +7,17 @@
                     <%= nombre.nombre %>,  
                     <%= nombre.edad %> años
                     <!-- <img src="<%= nombre.imagen %>" alt="Foto de <%= nombre.nombre %>"> -->
+
+                    <a href="nombres/eliminar/id/<%= nombre.id %>">Eliminar</a>
                 </li>
             <% } %>
         </ul>
+        <!--
         <form action="nombres" method="POST">
             <label>Presiona el siguiente botón para eliminar el último nombre agregado</label>
             <input type="submit" value="Eliminar">
         </form>
+        -->
     </main>
 
 <%- include('partials/footer.ejs') %>
