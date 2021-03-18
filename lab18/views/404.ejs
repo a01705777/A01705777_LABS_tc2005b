@@ -1,0 +1,34 @@
+<%- include('partials/head.ejs') %>
+
+<main> 
+    <h1> Error 404 - Page Not Found <h1></h1>
+    <div> 
+        <h4>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h4>
+        <p> 
+            Es más sencillo ubicar el código de un mismo tipo (SQL) en un solo lugar, además de que mantiene 
+            la arquitectura MVC, en donde la capa del modelo es la encargada de los procesos relacionados 
+            directamente con los datos. 
+        </p>
+    </div>
+    <div>
+        <h4>¿Qué es SQL injection y cómo se puede prevenir?</h4>
+        <p>
+            SQL injection es la inyección o inserción de código SQL en las formas de una página web donde 
+            se espera recibir datos. Es peligrosa porque no se debe permitir la libre modificación de la base 
+            de datos al cliente.
+            <br>
+            Para prevenirlo, en cada inserción o consulta a la Base de Datos es necesario escribir signos 
+            de interrogación. 
+        </p>
+        <p>
+            Ejemplos: 
+            <br>
+            Inserción: INSERT INTO tabla1 (col1) VALUES (?), [this.valor1]
+            <br>
+            Consulta: SELECT * FROM tabla1 WHERE id=?, [id]
+        </p>
+    </div>
+</main>
+
+</body>
+</html>

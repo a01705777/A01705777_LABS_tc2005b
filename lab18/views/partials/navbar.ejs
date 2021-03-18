@@ -1,0 +1,28 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="/tareas/html">HTML</a></li>
+    <li><a href="/tareas/css">CSS</a></li>
+    <li><a href="/tareas/js">JavaScript</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper red darken-1">
+    <a href="/" class="brand-logo center">Inicio</a>
+    <ul class="left hide-on-med-and-down">
+      <% if (isLoggedIn) { %>
+        <li><a href="/nombres">Nombres</a></li>
+        <li><a href="/nombres/nuevo-nombre">Nuevo Nombre</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Tareas<i class="material-icons right">arrow_drop_down</i></a></li>
+      <% } %>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <% if(isLoggedIn) { %>
+        <li><a href="/usuarios/logout">Cerrar Sesión</a></li>
+      <% } %>
+      <% if(!isLoggedIn) { %>
+        <li> <a href="/usuarios/signup">Regístrate</a>
+        <li><a href="/usuarios/login">Login</a></li>
+      <% } %>
+    </ul>
+  </div>
+</nav>
