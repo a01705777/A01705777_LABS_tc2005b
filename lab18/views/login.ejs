@@ -3,13 +3,17 @@
 
     <main>
         <h1><%= titulo %></h1>
+        <% if(error) { %>
+            <span style="color: red;"><%= error %> </span>
+            <br>
+        <% } %>
         <div>
             <form action="login" method="POST"> 
                 <label>Usuario</label><br>
-                <input type="text" name="usuario"> 
+                <input type="text" name="correo" required> 
                 <br><br>
                 <label>Contraseña</label><br>
-                <input type="password" name="password"> 
+                <input type="password" name="password" required> 
                 <br><br>
                 <input type="submit" value="Ingresar">
             </form>
