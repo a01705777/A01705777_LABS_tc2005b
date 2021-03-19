@@ -18,6 +18,7 @@
         </div>
 
         <form action="<%= usuario.id_usuario %>" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <label>Cambia la foto de perfil: </label>
             <input type="text" name="nueva_imagen"> 
             <input type="submit" value="Cambiar">  

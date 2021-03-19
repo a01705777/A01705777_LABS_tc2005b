@@ -38,7 +38,8 @@ exports.getUsuarioEspecifico = (request, response, next) => {
         .then(([rows, fieldData]) => {
             response.render('usuario_especifico', {
                 titulo: rows[0].nombre, 
-                usuario: rows[0],    // Mando solo un usuario 
+                usuario: rows[0],    // Mando solo un usuario
+                csrfToken: request.csrfToken(), 
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
         })

@@ -5,6 +5,7 @@ const session = require('express-session');
 exports.getlogin = (request, response, next) => {
     response.render('login', {
         titulo: 'Inicio de Sesión',
+        csrfToken: request.csrfToken(),
         error: request.session.error,
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
@@ -51,6 +52,7 @@ exports.postlogin = (request, response, next) => {
 exports.getSignUp = (request, response, next) => {
     response.render('signup', {
         titulo: 'Registra tus datos',
+        csrfToken: request.csrfToken(),
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };

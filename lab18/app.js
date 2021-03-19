@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const session = require('express-session');
+const csrf = require('csurf');
+const csrfProtection = csrf();
 
 var cookieParser = require('cookie-parser');
 
@@ -36,6 +38,8 @@ app.use(session({
 
 //Acceder a los archivos de la carpeta Public
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(csrfProtection);
 
 //Rutas a utilizar
 app.use('/', rutasInicio);
