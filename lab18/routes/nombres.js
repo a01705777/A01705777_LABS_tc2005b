@@ -4,9 +4,11 @@ const router = express.Router();
 // Controlador
 const nombresController = require('../controllers/nombres_controller');
 
+/*
 router.get('/nuevo-nombre', nombresController.getNuevoNombre);
 
 router.post('/nuevo-nombre', nombresController.postNuevoNombre);
+*/
 
 router.get('/:id_usuario', nombresController.getUsuarioEspecifico);
 

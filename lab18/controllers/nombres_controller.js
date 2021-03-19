@@ -1,5 +1,6 @@
 const Nombre = require('../models/nombres_model');
 
+/*
 // Get Nuevo Nombre
 exports.getNuevoNombre = (request, response, next) => {
     response.render('nuevo-nombre', {
@@ -27,6 +28,7 @@ exports.postNuevoNombre = (request, response, next) => {
             console.log(err)
         });
 };
+*/
 
 // Muestra un usuario segun el id en la ruta
 exports.getUsuarioEspecifico = (request, response, next) => {
@@ -41,6 +43,11 @@ exports.getUsuarioEspecifico = (request, response, next) => {
             });
         })
         .catch(err => {
+            console.log('El id no existe');
+            response.status(404);
+            response.render('404', {
+                titulo: '404 - Page Not Found'
+            });
             console.log(err);
         });
 };
