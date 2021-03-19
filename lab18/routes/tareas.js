@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const isAuth = require('../util/is-Auth');
 
 const tareasController = require('../controllers/tareas_controller');
 
-router.get('/html', tareasController.getHTML);
+router.get('/html', isAuth, tareasController.getHTML);
 
-router.get('/css', tareasController.getCSS);
+router.get('/css', isAuth, tareasController.getCSS);
 
-router.get('/js', tareasController.getJS);
+router.get('/js', isAuth, tareasController.getJS);
 
-router.get('/', tareasController.get);
+router.get('/', isAuth, tareasController.get);
 
 router.use('/', tareasController.use);
 
