@@ -16,14 +16,24 @@
               </div>
             </div>
         </div>
+       <form id="ChangeIMG" action="<%= usuario.id_usuario %>" method="POST">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+          <label>Cambia la foto de perfil: </label>
+          <input type="text" name="nueva_imagen">
+          <button type="submit">Cambiar</button>
+        </form> 
 
-        <form action="<%= usuario.id_usuario %>" method="POST">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-            <label>Cambia la foto de perfil: </label>
-            <input type="text" name="nueva_imagen"> 
-            <input type="submit" value="Cambiar">  
-        </form>
     </main>
+    <script> 
+      let changeButton = document.getElementById("ChangeIMG");
+      changeButton.addEventListener('submit', function(event) {        
+        let confirmacion = confirm('¿Cambiar la foto?');
+        if(!confirmacion) {
+          event.preventDefault(); 
+        }
+      });
+
+    </script>
 
 
 <%- include('partials/footer.ejs') %>
