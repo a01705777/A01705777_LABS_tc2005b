@@ -16,11 +16,14 @@
               </div>
             </div>
         </div>
-       <form id="ChangeIMG" action="<%= usuario.id_usuario %>" method="POST">
+
+       <form id="ChangeIMG" action="<%= usuario.id_usuario %>" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
           <label>Cambia la foto de perfil: </label>
           <input type="text" name="nueva_imagen">
-          <button type="submit">Cambiar</button>
+          <input type="file" name="imgPath">
+          <br><br>
+          <input type="submit" name="enviar" value="Subir">
         </form> 
 
     </main>

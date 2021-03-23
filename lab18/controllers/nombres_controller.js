@@ -58,8 +58,10 @@ exports.postUsuarioEspecifico = (request, response, next) => {
     let respuesta = request.body.confirmacion;
     
     const id = request.params.id_usuario;       // id que aparece en la ruta
-    const img = request.body.nueva_imagen;
+    const img = request.body.imgPath;
     
+    // const path = request.body.imgPath;
+
     Nombre.changeImage(id, img)
         .then(() => {
             response.status(302);
