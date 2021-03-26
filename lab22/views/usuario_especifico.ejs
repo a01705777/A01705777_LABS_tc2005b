@@ -1,0 +1,44 @@
+<%- include('partials/head.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <main>
+        <h1><%= titulo %></h1>
+        <div class="row">
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image">
+                  <!-- El problema es que estaba buscando la foto en la carpeta al mismo nivel, pero como la ruta tiene el id, 
+                  hay mas profundida y hay que bajar un nivel para buscar en todas las carpetas definidas como estaticas en public
+                  y encontrar la foto. Para esto se pone la diagonal.  -->
+                  <img src="/<%= usuario[0].imagen %>" alt="Foto de <%= usuario[0].nombre %>">
+                  <span class="card-title"><%= usuario[0].nombre %></span>
+                </div>
+                <div class="card-content">
+                  <p>Hola! Mi correo es: <a href = 'mailto: <%= usuario[0].email %>'><%= usuario[0].email %></a> </p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>Cambia la foto de perfil: </div>
+        <br>
+        <form id="ChangeIMG" action="<%= usuario[0].id_usuario %>?_csrf<%= csrfToken %>" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+          <input type="file" name="imgPath">
+          <br><br>
+          <input type="submit" value="Subir">
+        </form> 
+
+    </main>
+    <script> 
+      let changeButton = document.getElementById("ChangeIMG");
+      changeButton.addEventListener('submit', function(event) {        
+        let confirmacion = confirm('¿Cambiar la foto?');
+        if(!confirmacion) {
+          event.preventDefault(); 
+        }
+      });
+
+    </script>
+
+
+<%- include('partials/footer.ejs') %>

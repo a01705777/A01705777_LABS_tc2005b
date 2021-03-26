@@ -1,0 +1,101 @@
+<%- include ('partials/head_CSS.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<header>
+    <h1> Datos Interesantes de CSS </h1>
+    <img src="/Media/CSS.jpg" alt="CSS logo">
+</header>
+
+<main>
+    <br>
+    <section>
+        <header>
+            <h2> Preguntas y Respuestas </h2>
+        </header>
+
+
+        <p><strong>1. Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?  </strong></p>
+        <p>
+            !important es una palabra reservada de CSS que debe utilizarse con cuidado. Su función es que al aplicarla 
+            a algún comando de CSS, este comando no cambiará aunque se escriba lo contrario, por ejemplo: 
+        </p>
+        <p>
+            p {
+                padding: 1em !important; 
+            }
+            .paragraph {
+                padding: 4em; 
+            }
+        </p>      
+        <p>
+            Al querer aplicar la clase paragraph a algún párrafo en HTML, el padding no será de 4em
+            como lo indica la clase, sino de 1em, porque fue declarado 
+            como ¡important en el selector de párrafo (p) previamente. 
+        </p>
+        <p>
+            Con la experiencia que tengo con HTML5, no considero necesario el uso de ¡important, 
+            pues al utilizar correctamente CSS podremos priorizar los comandos de manera correcta. 
+            Además, el utilizar esta palabra clave puede afectar el que alguien más quiera modificar tu código, 
+            pues deberá conocer muy bien las reglas impuestas por ¡important.
+        </p>
+        
+        <hr>
+        
+        <p><strong>2. Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado? </strong></p>
+        <p>
+            Por el requisito de software no funcional de portabilidad: adaptabilidad. 
+            Las imágenes que se escojan para ser mostradas en una página web deben tener las medidas correctas 
+            para los distintos tamaños de pantallas que hay; por ejemplo: celulares, tabletas, laptops, monitores, etc. 
+            Si no se cuidan los aspectos de sus medidas para diferentes tamaños de pantallas tendremos problemas con la resolución y espacio mostrado de la imagen. 
+        </p>
+
+        <hr>
+
+        <p><strong>3. Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong></p>
+        <ul = class=circle_list">
+            <li><strong>Porcentaje %: </strong> Es el porcentaje relativo de un objeto con su elemento contenedor.  </li>
+            <li><strong>Pixel px: </strong> Es una medida relativa  y representa cuántos puntos visibles tiene una pantalla. </li>
+            <li><strong>Punto pt: </strong> Es una medida absoluta y 1 punto = 1/72 pulgadas; es decir, 0.35 mm aproximadamente. </li>
+        </ul> 
+        <p>
+            Las medidas absolutas son poco utilizadas en el desarrollo web porque no permiten la adaptabilidad de los elementos con pantallas de diferentes tamaños. En cambio, los pixeles y porcentajes sí permiten esa adaptabilidad o compatibilidad. 
+            Con el porcentaje (%) podemos tener tamaños relativos y adecuados según la pantalla que despliegue la información, mientras que los pixeles nos sirven para que ciertos elementos tengan siempre tamaños precisos, sin importar la pantalla. 
+        </p>
+        
+        <hr>
+
+        <p><strong>4. ¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</strong></p>
+        <p>
+            Utilizar una versión minimizada de un archivo .css significa que este pasó por un 
+            proceso donde los espacios innecesarios y caracteres fueron eliminados. 
+            Esto optimiza el código y permite que el tiempo que toma el sistema para leer el archivo disminuya, pues entre menos caracteres tenga que leer, 
+            menos tiempo toma, además de reducir el tráfico en la red.  
+
+        </p>
+        
+        <hr>
+    </section>
+    <section>
+        <header>
+            <h2>Referencias</h2>
+        </header>
+       
+        <p>César Krall. (2021). Unidades de medida CSS relativas o absolutas. in, cm, mm, pt, pc, pixel px, porcentaje, em, ex (CU01024D). Aprenderaprogramar.com. https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=728:unidades-de-medida-css-relativas-o-absolutas-in-cm-mm-pt-pc-pixel-px-porcentaje-em-ex-cu01024d&catid=75&Itemid=203</p>
+        <p>Responsive images - Learn web development | MDN. (2021, February 9). Mozilla.org. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images</p>
+        <p>The complete best practices for minifying CSS - LogRocket Blog. (2019, July 12). LogRocket Blog. https://blog.logrocket.com/the-complete-best-practices-for-minifying-css/#:~:text=Why%20minify%20CSS%3F,blocking%20resource%20on%20the%20web.</p>
+        <p>When Using !important is The Right Choice | CSS-Tricks. (2011, May 22). CSS-Tricks. https://css-tricks.com/when-using-important-is-the-right-choice/</p>
+        <br><br>
+    </section>
+    <section>
+        <header>
+            <h2>Datos de Contacto</h2>
+        </header>
+        <div>Nombre: Rafael Hinojosa López</div>
+        <div>Matrícula: A01705777</div>
+        <div>Correo: a01705777@itesm.mx</div>
+        <div id="last_div">Instagram: <a href="https://www.instagram.com/rafahinojosa.embajadorestec/"> @rafahinojosa.embajadorestec</a></div>
+    </section>
+    <br><br>
+</main>
+
+<%- include ('partials/footer.ejs') %>
