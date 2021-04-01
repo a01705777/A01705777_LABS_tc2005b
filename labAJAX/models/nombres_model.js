@@ -27,6 +27,10 @@ module.exports = class Nombre {
         return db.execute('SELECT * FROM usuario WHERE id_usuario=?', [id]);
     }
 
+    static fetchName(nombre) {
+        return db.execute('SELECT * From usuario WHERE nombre LIKE ?', ['%' + nombre + '%']);
+    }
+
     static changeImage(id, imagen) {
         return db.execute('UPDATE usuario SET imagen=? where id_usuario=?', [imagen, id]);
     }

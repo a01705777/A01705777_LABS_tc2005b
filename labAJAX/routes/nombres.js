@@ -5,6 +5,8 @@ const isAuth = require('../util/is-Auth');
 // Controlador
 const nombresController = require('../controllers/nombres_controller');
 
+router.post('/buscar', isAuth, nombresController.postBuscar);
+
 router.get('/:id_usuario', isAuth, nombresController.getUsuarioEspecifico);
 
 router.post('/:id_usuario', isAuth, nombresController.postUsuarioEspecifico);   // Cambio de imagen

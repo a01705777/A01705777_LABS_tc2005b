@@ -27,6 +27,7 @@ const { request } = require('http');
 
 //BodyParser para acceder facilmente a datos de las formas 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //fileStorage: Es nuestra constante de configuración para manejar el almacenamiento
 const fileStorage = multer.diskStorage({

@@ -1,5 +1,18 @@
 const Nombre = require('../models/nombres_model');
 
+// Lista de nombres segun lo ingresado en el buscador
+exports.postBuscar = (request, response, next) => {
+    const nombre = request.body.nombreBuscado;
+    Nombre.fetchName(nombre) 
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            response.status(200).json(rows);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
 // Muestra un usuario segun el id en la ruta
 exports.getUsuarioEspecifico = (request, response, next) => {
     const id = request.params.id_usuario;
