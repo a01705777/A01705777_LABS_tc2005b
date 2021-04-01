@@ -4,14 +4,15 @@
     <main>
         <h1><%= titulo %></h1>
         <div>
-            <form action="signup" method="POST"> 
+            <form action="signup" method="POST" enctype="multipart/form-data"> 
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                 <label> Nombre: </label><input type="text" name="nuevo_nombre" required> 
                 <label> Email: </label><input type="text" name="nuevo_correo" required>
                 <label> Contraseña: </label><input type="password" name="nueva_contraseña" required>
                 <label> Edad: </label><input type="text" name="nueva_edad" required>
-                <label> Foto de Perfil (Dirección de imagen): </label><input type="text" name="nueva_imagen">
-                <input type="submit" value="Enviar">
+                <label> Foto de Perfil (Dirección de imagen): </label><br><br>
+                <input type="file" name="imgPath"><br><br>
+                <input type="submit" value="Registrar">
             </form>
         </div> 
     </main>

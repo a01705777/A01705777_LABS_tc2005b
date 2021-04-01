@@ -3,7 +3,7 @@ const Nombre = require('../models/nombres_model');
 // Muestra un usuario segun el id en la ruta
 exports.getUsuarioEspecifico = (request, response, next) => {
     const id = request.params.id_usuario;
-    console.log(id);
+
     Nombre.fetchOne(id)
         // en rows se guarda la tupla de la consulta hecha en fetchOne
         .then(([rows, fieldData]) => {

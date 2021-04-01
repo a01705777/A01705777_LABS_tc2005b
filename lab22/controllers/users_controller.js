@@ -59,12 +59,18 @@ exports.getSignUp = (request, response, next) => {
 
 // Post Nuevo Nombre (Recibo lo enviado)
 exports.postSignUp = (request, response, next) => {
-    // nombre: request.body.nuevo_nombre, correo: request.body.nuevo_correo, contrasena: request.body.nueva_contraseña, imagen: request.body.nueva_imagen
+    const img = request.file;
+
+    if(!img) {
+        console.log('Error al subir la imagen');
+        return response.status(402).redirect('/usuarios/signup');
+    }
+
     const new_user = new Usuario(request.body.nuevo_correo, 
                                 request.body.nueva_contraseña, 
                                 request.body.nuevo_nombre,
                                 request.body.nueva_edad,
-                                request.body.nueva_imagen);
+                                img.filename);
     new_user.save()
         .then(() => {
             request.session.isLoggedIn = true;
