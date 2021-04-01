@@ -1,24 +1,54 @@
 <%- include('partials/head.ejs') %>
 <%- include ('partials/navbar.ejs') %>
 
-    <main>
-        <h1><%= titulo %></h1>
-        <div class="row">
-            <% for(let nombre of lista_nombres) { %>
-            <div class="col s12 m6">
-              <div class="card">
-                <div class="card-image">
-                  <img src="<%= nombre.imagen %>" alt="Foto de <%= nombre.nombre %>">
-                  <span class="card-title"><%= nombre.nombre %></span>
-                </div>
-                <div class="card-content">
-                  <p>Hola! Mi nombre es <%= nombre.nombre %> y tengo <%= nombre.edad %> años. </p>
-                </div>
+  <main>
+      <h1><%= titulo %></h1>
+      <label for="buscar">Buscar:</label>
+      <!-- <input type="hidden" name="_csrf" id="_csrf" value="<%= csrfToken %>"> -->
+      <input type="text" name="buscar" id="buscar" onkeyup="buscar()">
+      <div class="row">
+          <% for(let nombre of lista_nombres) { %>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src="<%= nombre.imagen %>" alt="Foto de <%= nombre.nombre %>">
+                <span class="card-title"><%= nombre.nombre %></span>
+              </div>
+              <div class="card-content">
+                <p>Hola! Mi nombre es <%= nombre.nombre %> y tengo <%= nombre.edad %> años. </p>
               </div>
             </div>
-            <% } %>
           </div>
-    </main>
+          <% } %>
+        </div>
+  </main>
 
+  <script>
+    function buscar() {
+      const nombreBuscado = document.getElementById('buscar').value;
+      // const csrf = document.getElementById('_csrf').value;
 
+      // console.log(nombreBuscado);
+      // console.log(csrf);
+      //   //función que manda la petición asíncrona
+      //   fetch('/ruta/asincrona', {
+      //       method: 'POST',
+      //       headers: {
+      //           'csrf-token': csrf
+      //       }
+      //       body: JSON.stringify(data)
+      //   }).then(result => {
+      //       return result.json(); //Regresa otra promesa
+      //   }).then(data => {
+      //       //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+      //       //...
+      //   }).catch(err => {
+      //       console.log(err);
+      //   });
+      // };
+  </script>
+
+  
+
+                  
 <%- include('partials/footer.ejs') %>

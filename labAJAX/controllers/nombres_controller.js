@@ -51,6 +51,7 @@ exports.get = (request, response, next) => {
             response.render('nombres', {
                 titulo:'Nombres', 
                 lista_nombres: rows,    // Tomamos los datos del modelo
+                csrfToken: request.csrfToken(), 
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
         })

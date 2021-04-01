@@ -3,8 +3,8 @@ const db = require('../util/database');
 module.exports = class Nombre {
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
-    constructor(_email, _password, _nombre, _edad, _imagen) {
-        this.email = _email;
+    constructor(_correo, _password, _nombre, _edad, _imagen) {
+        this.correo = _correo;
         this.password = _password;
         this.nombre = _nombre;
         this.edad = _edad;
@@ -13,8 +13,8 @@ module.exports = class Nombre {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        return db.execute('INSERT INTO usuario (email, password, nombre, edad, imagen) VALUES (?, ?, ?, ?, ?)',
-            [this.email, this.password, this.nombre, this.edad, this.imagen]
+        return db.execute('INSERT INTO usuario (correo, password, nombre, edad, imagen) VALUES (?, ?, ?, ?, ?)',
+            [this.correo, this.password, this.nombre, this.edad, this.imagen]
         );
     }
 

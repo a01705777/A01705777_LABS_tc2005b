@@ -4,8 +4,8 @@ const bcrypt = require('bcryptjs');
 module.exports = class Usuario {
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
-    constructor(_email, _password, _nombre, _edad, _imagen) {
-        this.email = _email;
+    constructor(_correo, _password, _nombre, _edad, _imagen) {
+        this.correo = _correo;
         this.password = _password;
         this.nombre = _nombre;
         this.edad = _edad;
@@ -17,8 +17,8 @@ module.exports = class Usuario {
         return bcrypt.hash(this.password, 12)
             .then((password_encriptado) => {
                 return db.execute(
-                    'INSERT INTO usuario (email, password, nombre, edad, imagen) VALUES (?, ?, ?, ?, ?)',
-                    [this.email, password_encriptado, this.nombre, this.edad, this.imagen]
+                    'INSERT INTO usuario (correo, password, nombre, edad, imagen) VALUES (?, ?, ?, ?, ?)',
+                    [this.correo, password_encriptado, this.nombre, this.edad, this.imagen]
                 );
             })
             .catch(err => console.log(err)); 
@@ -34,6 +34,6 @@ module.exports = class Usuario {
     }
 
     static fetchMail(correo) {
-        return db.execute('SELECT * FROM usuario WHERE email=?', [correo]);
+        return db.execute('SELECT * FROM usuario WHERE correo=?', [correo]);
     }
 }
