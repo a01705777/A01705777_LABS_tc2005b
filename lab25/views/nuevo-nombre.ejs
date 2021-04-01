@@ -1,0 +1,19 @@
+<%- include('partials/head.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <main>
+        <h1><%= titulo %></h1>
+        <div>
+            <form action="nuevo-nombre" method="POST"> 
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                <label> Nombre: </label><input type="text" name="nuevo_nombre"> 
+                <label> Email: </label><input type="text" name="nuevo_correo">
+                <label> Contraseña: </label><input type="password" name="nueva_contraseña">
+                <label> Edad: </label><input type="text" name="nueva_edad">
+                <label> Foto de Perfil (Dirección de imagen): </label><input type="text" name="nueva_imagen">
+                <input type="submit" value="Enviar">
+            </form>
+        </div> 
+    </main>
+
+<%- include('partials/footer.ejs') %>
