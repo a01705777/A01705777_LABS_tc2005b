@@ -3,39 +3,34 @@
 <main> 
     <h1> Error 404 - Page Not Found <h1></h1>
     <div>
-        <h4> ¿Qué otras formas de autentificación existen? </h4>
-        <ul>
-            <li> Autentificación simple: Se envían datos de ingreso. </li>
-            <li> Autentificación fuerte: Incluye criptografía, biometría (retina del ojo, huellas digitales, etc). </li>
-            <li> Firma digital </li>
-            <li> No repudio </li>
-            <li>Más información: <a href='http://bibing.us.es/proyectos/abreproy/11214/fichero/TOMO+I%252F07+Capitulo+7+Conceptos+de+seguridad.pdf'> Conceptos de Seguridad </a></li> 
-        </ul>
+        <h4> ¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)? </h4>
+        <p>
+            Una Rich Internet Application es una aplicación web que comparte muchas de las características de una aplicación 
+            de escritorio. Tiene varias funcionalidades y por esto es recomendable utilizar AJAX, conjunto de tecnologías
+            con las cuales podremos realizar peticiones asíncronas; es decir, sin tener que recargar toda la página, solo 
+            pedimos cambiar ciertas partes de ella (texto, imagenes, etc.).  
+
+            En mi página, utilicé AJAX para buscar usuarios específicos de la página. Lo que más aprendo de esto, es que 
+            ahora tengo una mejor base para optimizar el proyecto en el que estamos trabajando, pues hay vistas que requieren
+            tener peticiones asíncronas para reducir su complejidad y optimizar su rendimiento.
+        </p>
     </div>
     <div> 
-        <h4>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h4>
+        <h4> ¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor? </h4>
         <p> 
-            Es más sencillo ubicar el código de un mismo tipo (SQL) en un solo lugar, además de que mantiene 
-            la arquitectura MVC, en donde la capa del modelo es la encargada de los procesos relacionados 
-            directamente con los datos. 
+            De acuerdo con lo visto en clase, debemos enviar en las peticiones asíncronas de AJAX el código CSRF para proteger las rutas 
+            y evitar ataques de Cross-Site Request Forgery (copiar el sitio web y que sea modificado para fines malos operados por 
+            otras personas). Además, en las consultas a la base de datos hechas con la petición, es necesario tener una sintaxis 
+            que evite las inyecciones de código SQL. 
         </p>
     </div>
     <div>
-        <h4>¿Qué es SQL injection y cómo se puede prevenir?</h4>
+        <h4> ¿Qué es JSON? </h4>
         <p>
-            SQL injection es la inyección o inserción de código SQL en las formas de una página web donde 
-            se espera recibir datos. Es peligrosa porque no se debe permitir la libre modificación de la base 
-            de datos al cliente.
-            <br>
-            Para prevenirlo, en cada inserción o consulta a la Base de Datos es necesario escribir signos 
-            de interrogación. 
-        </p>
-        <p>
-            Ejemplos: 
-            <br>
-            Inserción: INSERT INTO tabla1 (col1) VALUES (?), [this.valor1]
-            <br>
-            Consulta: SELECT * FROM tabla1 WHERE id=?, [id]
+            JavaScript Object Notation (JSON) es un estándar de texto que almacena objetos
+            de JavaScript de manera fácil de entender para el usuario y el sistema. 
+            Con él podemos enviar datos en las aplicaciones y páginas web y tratarlos 
+            de manera sencilla. 
         </p>
     </div>
 </main>
