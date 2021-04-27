@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Futuristic Armour';
+    /* src: url('Fonts/Futuristic Armour.otf'); */
+    src: url('../Fonts/Futuristic\ Armour.otf');
+}
+
+body {
+    margin: 0;
+}
+
+.background {
+    position: fixed;
+    background: url(../Media/fondo-login.png);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1
+}
+
+.background-login-form {
+    position: absolute;
+    background: url(../Media/login-form.png);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+}
+
+.background-last {
+    position: absolute;
+    background: url(../Media/fondo-final-container.png);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1
+}
+
+.main-container {
+    font-family: 'Futuristic Armour';
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.title {
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.last-message {
+    /* div para poner titulo y body... */
+    position: absolute;
+    top: 167px;
+    left: 30px;
+
+    width: 580px;
+    height: 385px;
+}
+
+.last-message-title {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 1rem;
+    font-size: 45px;
+}
+
+.last-message-body {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    
+    padding: 1rem;
+    width: 90%;
+    height: 61%;
+    font-size: 35px;
+}
+
+.login-form {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    bottom: 30%;
+    right: 30%;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    width: 538px;
+    height: 474px;
+}
+
+.last-container {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    bottom: 30%;
+    right: 30%;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    width: 645px;
+    height: 568px;
+}
+
+.login-form-input1 {
+    position: absolute;
+    left: 63px;
+    top: 260px;
+}
+
+.login-form-input2 {
+    position: absolute;
+    left: 63px;
+    top: 360px;
+}
+
+.login-confirmar {
+    position: absolute;
+    margin-top: auto;
+    margin-left: auto;
+    top: 410px;
+    left: 233px;
+}
+
+input {
+    border: hidden;
+    font-size: 20px;
+    height: 38px;
+    width: 391px;
+}
+
+button {
+    font-size: 1rem;
+    border-radius: 4px;
+    border-color: rgb(145, 187, 224);
+    height: 30px;
+}
+
+.content {
+    padding-top: 5%;
+    width: 70%;
+    margin-left: 15%;
+    min-height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.login-error {
+    position: absolute;
+    top: 440px;
+    left: 160px;
+    text-align: center;
+}
+
+.description {
+    font-family: 'Futuristic Armour';
+    font-size: 20px;
+    color: rgb(49, 27, 27);
+    font-weight: bold;
+}
